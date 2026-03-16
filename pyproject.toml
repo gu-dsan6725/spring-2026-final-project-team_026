@@ -1,0 +1,20 @@
+[project]
+name = "basic-rag"
+version = "0.1.0"
+description = "Basic RAG Lab for Applied Generative AI course"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "faiss-cpu>=1.9.0",
+    "ipykernel>=6.29.5",
+    "jupyter-client>=8.6.3",
+    "langchain>=0.3.13",
+    "langchain-community>=0.3.13",
+    "langchainhub>=0.1.21",
+    "litellm>=1.55.12",
+    "python-dotenv>=1.0.0",
+    "sentence-transformers>=3.0.0",
+    "rank-bm25>=0.2.2",
+    "cohere>=5.0.0",
+    "unstructured[md]>=0.18.31"
+]
