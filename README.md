@@ -2,6 +2,13 @@
 
 This repository contains information about deliverables, project ideas, and all things related to the final project.
 
+## Team 01 Project (Codapter / AI Tech Debt Forge)
+
+Milestone 2 check-in artifacts:
+
+- **Updated architecture**: `docs/architecture.md`
+- **Risks & mitigation plan**: `docs/risks.md`
+
 ## Overview
 
 DSAN 6725 is an applied AI course. The focus is on building production-quality AI agent systems that solve real problems. All projects must implement AI agents unless an alternative approach is explicitly approved by the professor.
