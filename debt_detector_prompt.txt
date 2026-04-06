@@ -16,7 +16,7 @@ Required output format:
 {
   "findings": [
     {
-      "file": "file.py mentioned at start",
+      "file": "file.py mentioned at start, MUST be relative path",
       "category": "lint_issue",
       "issue": "short name of the problem",
       "details": "short explanation of why this may be technical debt",

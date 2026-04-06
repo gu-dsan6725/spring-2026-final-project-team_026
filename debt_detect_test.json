@@ -1,460 +1,316 @@
 {
   "findings": [
     {
+      "file": "pdeps.py",
+      "category": "maintainability",
+      "issue": "Potential code duplication",
+      "details": "The code in pdeps.py may be duplicated in other files, making it harder to maintain.",
+      "urgency": 3,
+      "evidence": "The function pdeps() is not imported from any other file, suggesting it may be duplicated."
+    },
+    {
+      "file": "pdeps.py",
+      "category": "maintainability",
+      "issue": "Long function",
+      "details": "The function pdeps() is quite long and complex, making it harder to understand and maintain.",
+      "urgency": 4,
+      "evidence": "The function pdeps() has many lines of code and uses multiple loops and conditional statements."
+    },
+    {
+      "file": "pdeps.py",
+      "category": "compatibility_risk",
+      "issue": "Potential compatibility issue with Python 3.10+",
+      "details": "The code in pdeps.py uses the 'print' statement, which may not be compatible with Python 3.10+.",
+      "urgency": 3,
+      "evidence": "The line 'print(data)' uses the 'print' statement, which may not be compatible with Python 3.10+."
+    },
+    {
+      "file": "pdeps.py",
+      "category": "maintainability",
+      "issue": "Potential code smell",
+      "details": "The code in pdeps.py uses a lot of global variables, which may make it harder to understand and maintain.",
+      "urgency": 3,
+      "evidence": "The code in pdeps.py uses the 'sys' module, which may indicate a potential code smell."
+    },
+    {
+      "file": "pdeps.py",
+      "category": "maintainability",
+      "issue": "Potential code smell",
+      "details": "The code in pdeps.py uses a lot of magic numbers, which may make it harder to understand and maintain.",
+      "urgency": 3,
+      "evidence": "The code in pdeps.py uses numbers like 256 and 4, which may indicate a potential code smell."
+    },
+    {
+      "file": "pdeps.py",
+      "category": "maintainability",
+      "issue": "Potential code smell",
+      "details": "The code in pdeps.py uses a lot of complex conditional statements, which may make it harder to understand and maintain.",
+      "urgency": 4,
+      "evidence": "The code in pdeps.py uses complex conditional statements like 'if len(items) != 3:'."
+    },
+    {
+      "file": "pdeps.py",
+      "category": "maintainability",
+      "issue": "Potential code smell",
+      "details": "The code in pdeps.py uses a lot of nested loops, which may make it harder to understand and maintain.",
+      "urgency": 4,
+      "evidence": "The code in pdeps.py uses nested loops like 'for line in lines:'."
+    },
+    {
+      "file": "demo/beer.py",
+      "category": "maintainability",
+      "issue": "Long lines",
+      "details": "Lines longer than 79 characters may be difficult to read and maintain.",
+      "urgency": 3,
+      "evidence": "if len(parts) < 3: continue"
+    },
+    {
+      "file": "demo/beer.py",
+      "category": "maintainability",
+      "issue": "Complex conditional",
+      "details": "Complex conditionals may be difficult to understand and maintain.",
+      "urgency": 3,
+      "evidence": "if re.match(type_pattern, macro, re.DOTALL):"
+    },
+    {
+      "file": "demo/beer.py",
+      "category": "compatibility_risk",
+      "issue": "Python 3.10+ compatibility risk",
+      "details": "The code may not be compatible with Python 3.10+ due to the use of the 're.DOTALL' flag.",
+      "urgency": 5,
+      "evidence": "re.DOTALL"
+    },
+    {
+      "file": "demo/beer.py",
+      "category": "maintainability",
+      "issue": "Deep nesting",
+      "details": "Deeply nested code may be difficult to understand and maintain.",
+      "urgency": 3,
+      "evidence": "if type is not NEWLINE: errprint(\"Skipping file %r; can't parse line %d:\n%s\" % (self.fname, srow, line)) return []"
+    },
+    {
+      "file": "demo/hanoi.py",
+      "category": "maintainability",
+      "issue": "Long function",
+      "details": "Functions should be kept short and focused on a single task.",
+      "urgency": 3,
+      "evidence": "def hanoi(n, source, target, aux):"
+    },
+    {
+      "file": "demo/hanoi.py",
+      "category": "maintainability",
+      "issue": "Complex function",
+      "details": "Functions should be kept simple and easy to understand.",
+      "urgency": 3,
+      "evidence": "def hanoi(n, source, target, aux):"
+    },
+    {
+      "file": "demo/hanoi.py",
+      "category": "maintainability",
+      "issue": "Magic numbers",
+      "details": "Magic numbers should be replaced with named constants.",
+      "urgency": 2,
+      "evidence": "if n == 1:"
+    },
+    {
+      "file": "demo/hanoi.py",
+      "category": "maintainability",
+      "issue": "Lack of comments",
+      "details": "Functions and code should be well-documented with comments.",
+      "urgency": 2,
+      "evidence": "def hanoi(n, source, target, aux):"
+    },
+    {
+      "file": "demo/hanoi.py",
+      "category": "compatibility_risk",
+      "issue": "Python 2.x compatibility",
+      "details": "The code may not be compatible with Python 3.x.",
+      "urgency": 5,
+      "evidence": "import sys"
+    },
+    {
       "file": "pathfix.py",
       "category": "maintainability",
       "issue": "Shebang line",
-      "details": "The shebang line is hardcoded to /usr/bin/env python3, which may not be compatible with all Python versions.",
+      "details": "The shebang line is hardcoded to /usr/local/bin/python, which may not be the intended Python interpreter.",
       "urgency": 3,
-      "evidence": "#! /usr/bin/env python3"
-    },
-    {
-      "file": "pdeps.py",
-      "category": "compatibility_risk",
-      "issue": "Python 3.10+ compatibility risk",
-      "details": "The code uses the 're' module without specifying a version, which may not be compatible with Python 3.10+.",
-      "urgency": 3,
-      "evidence": "import re"
-    },
-    {
-      "file": "pdeps.py",
-      "category": "maintainability",
-      "issue": "Long lines",
-      "details": "The code contains long lines that may be difficult to read and maintain.",
-      "urgency": 2,
-      "evidence": "if re.match(type_pattern, macro, re.DOTALL):"
-    },
-    {
-      "file": "pdeps.py",
-      "category": "maintainability",
-      "issue": "Complex regular expression",
-      "details": "The code uses a complex regular expression that may be difficult to understand and maintain.",
-      "urgency": 3,
-      "evidence": "if re.match(type_pattern, macro, re.DOTALL):"
+      "evidence": "#!/usr/local/bin/python"
     },
     {
       "file": "pdeps.py",
       "category": "maintainability",
       "issue": "Magic numbers",
-      "details": "The code uses magic numbers that may not be self-explanatory.",
-      "urgency": 2,
-      "evidence": "if len(parts) < 3:"
-    },
-    {
-      "file": "pdeps.py",
-      "category": "maintainability",
-      "issue": "Unclear variable names",
-      "details": "The code uses unclear variable names that may not be self-explanatory.",
-      "urgency": 2,
-      "evidence": "if len(parts) < 3:"
-    },
-    {
-      "file": "pdeps.py",
-      "category": "maintainability",
-      "issue": "Deep nesting",
-      "details": "The code has deep nesting that may be difficult to read and maintain.",
-      "urgency": 3,
-      "evidence": "if re.match(type_pattern, macro, re.DOTALL):"
-    },
-    {
-      "file": "pdeps.py",
-      "category": "maintainability",
-      "issue": "Unclear function name",
-      "details": "The code uses an unclear function name that may not be self-explanatory.",
-      "urgency": 2,
-      "evidence": "def report(fname, nr, macro):"
-    },
-    {
-      "file": "pdeps.py",
-      "category": "maintainability",
-      "issue": "Unused imports",
-      "details": "The code imports modules that are not used.",
-      "urgency": 2,
-      "evidence": "import os, sys"
-    },
-    {
-      "file": "pdeps.py",
-      "category": "maintainability",
-      "issue": "Complex conditional statements",
-      "details": "The code uses complex conditional statements that may be difficult to understand and maintain.",
-      "urgency": 3,
-      "evidence": "if re.match(type_pattern, macro, re.DOTALL):"
-    },
-    {
-      "file": "pdeps.py",
-      "category": "maintainability",
-      "issue": "Unclear variable type",
-      "details": "The code uses unclear variable types that may not be self-explanatory.",
-      "urgency": 2,
-      "evidence": "if len(parts) < 3:"
-    },
-    {
-      "file": "pdeps.py",
-      "category": "maintainability",
-      "issue": "Deep function calls",
-      "details": "The code has deep function calls that may be difficult to read and maintain.",
-      "urgency": 3,
-      "evidence": "if re.match(type_pattern, macro, re.DOTALL):"
-    },
-    {
-      "file": "pdeps.py",
-      "category": "maintainability",
-      "issue": "Unused variables",
-      "details": "The code uses variables that are not used.",
-      "urgency": 2,
-      "evidence": "if len(parts) < 3:"
-    },
-    {
-      "file": "pdeps.py",
-      "category": "maintainability",
-      "issue": "Complex loop",
-      "details": "The code uses a complex loop that may be difficult to understand and maintain.",
-      "urgency": 3,
-      "evidence": "for line in fp:"
-    },
-    {
-      "file": "pdeps.py",
-      "category": "maintainability",
-      "issue": "Unclear loop variable",
-      "details": "The code uses an unclear loop variable that may not be self-explanatory.",
-      "urgency": 2,
-      "evidence": "for line in fp:"
-    },
-    {
-      "file": "pdeps.py",
-      "category": "maintainability",
-      "issue": "Deep loop nesting",
-      "details": "The code has deep loop nesting that may be difficult to read and maintain.",
-      "urgency": 3,
-      "evidence": "for line in fp:"
-    },
-    {
-      "file": "pdeps.py",
-      "category": "maintainability",
-      "issue": "Unclear loop condition",
-      "details": "The code uses an unclear loop condition that may not be self-explanatory.",
-      "urgency": 2,
-      "evidence": "for line in fp:"
-    },
-    {
-      "file": "pdeps.py",
-      "category": "maintainability",
-      "issue": "Unused functions",
-      "details": "The code defines functions that are not used.",
-      "urgency": 2,
-      "evidence": "def report(fname, nr, macro):"
-    },
-    {
-      "file": "pdeps.py",
-      "category": "maintainability",
-      "issue": "Complex function",
-      "details": "The code uses a complex function that may be difficult to understand and maintain.",
-      "urgency": 3,
-      "evidence": "def report(fname, nr, macro):"
-    },
-    {
-      "file": "demo/beer.py",
-      "category": "maintainability",
-      "issue": "Long lines",
-      "details": "Lines longer than 79 characters may be difficult to read and maintain.",
-      "urgency": 3,
-      "evidence": "if re.match(type_pattern, macro, re.DOTALL):"
-    },
-    {
-      "file": "demo/beer.py",
-      "category": "compatibility_risk",
-      "issue": "Python 3.10+ compatibility risk",
-      "details": "The code may not be compatible with Python 3.10+ due to the use of the 'print' function without parentheses.",
-      "urgency": 5,
-      "evidence": "print(fname + \":\" + str(nr), file=f)"
-    },
-    {
-      "file": "demo/beer.py",
-      "category": "maintainability",
-      "issue": "Complex conditional statement",
-      "details": "The conditional statement may be difficult to read and understand.",
-      "urgency": 3,
-      "evidence": "if re.match(type_pattern, macro, re.DOTALL):"
-    },
-    {
-      "file": "demo/beer.py",
-      "category": "maintainability",
-      "issue": "Magic numbers",
-      "details": "The use of magic numbers (e.g. 256) may make the code harder to understand and maintain.",
-      "urgency": 2,
-      "evidence": "NT_OFFSET = 256"
-    },
-    {
-      "file": "demo/beer.py",
-      "category": "maintainability",
-      "issue": "Unused imports",
-      "details": "The import 'functools' is not used in the code.",
-      "urgency": 2,
-      "evidence": "from functools import partial"
-    },
-    {
-      "file": "demo/beer.py",
-      "category": "maintainability",
-      "issue": "Deep nesting",
-      "details": "The code has deep nesting, which may make it harder to read and understand.",
-      "urgency": 3,
-      "evidence": "if re.match(type_pattern, macro, re.DOTALL):"
-    },
-    {
-      "file": "demo/beer.py",
-      "category": "maintainability",
-      "issue": "Complex function",
-      "details": "The function 'report' may be complex and difficult to understand.",
-      "urgency": 3,
-      "evidence": "def report(fname, nr, macro):"
-    },
-    {
-      "file": "demo/eiffel.py",
-      "category": "compatibility_risk",
-      "issue": "Python 3.10+ compatibility risk",
-      "details": "The code may not be compatible with Python 3.10+ due to the use of Python 2.x syntax and features.",
-      "urgency": 5,
-      "evidence": "The use of `type is` instead of `isinstance()` and the `print` statement without parentheses."
-    },
-    {
-      "file": "demo/eiffel.py",
-      "category": "maintainability",
-      "issue": "Complex code structure",
-      "details": "The code has a complex structure with multiple nested loops and conditional statements, making it difficult to understand and maintain.",
-      "urgency": 3,
-      "evidence": "The use of multiple `if` statements and `for` loops without clear variable names."
-    },
-    {
-      "file": "demo/eiffel.py",
-      "category": "lint_issue",
-      "issue": "Unused import",
-      "details": "The `os` module is imported but not used in the code.",
-      "urgency": 1,
-      "evidence": "The import statement `import os` is not used anywhere in the code."
-    },
-    {
-      "file": "demo/hanoi.py",
-      "category": "maintainability",
-      "issue": "Long lines",
-      "details": "Lines longer than 79 characters may be difficult to read and maintain.",
-      "urgency": 3,
-      "evidence": "if __name__ == '__main__':\n    # ... long line ... "
-    },
-    {
-      "file": "demo/hanoi.py",
-      "category": "maintainability",
-      "issue": "Magic numbers",
-      "details": "The use of magic numbers (e.g., 3) may make the code harder to understand and maintain.",
-      "urgency": 3,
-      "evidence": "if __name__ == '__main__':\n    # ... magic number 3 ... "
-    },
-    {
-      "file": "demo/hanoi.py",
-      "category": "compatibility_risk",
-      "issue": "Python 3.10+ compatibility risk",
-      "details": "The use of the `print` function without parentheses may not be compatible with Python 3.10+.",
-      "urgency": 5,
-      "evidence": "print('Hello, World!')"
-    },
-    {
-      "file": "demo/hanoi.py",
-      "category": "maintainability",
-      "issue": "Unused imports",
-      "details": "The import of `os` is not used in the file.",
-      "urgency": 2,
-      "evidence": "import os"
-    },
-    {
-      "file": "demo/markov.py",
-      "category": "maintainability",
-      "issue": "Long lines",
-      "details": "Lines longer than 79 characters may be difficult to read and maintain.",
-      "urgency": 3,
-      "evidence": "if len(line) > 79:"
-    },
-    {
-      "file": "demo/markov.py",
-      "category": "maintainability",
-      "issue": "Complex conditional statement",
-      "details": "Complex conditional statements may be difficult to understand and maintain.",
-      "urgency": 3,
-      "evidence": "if type is not NEWLINE and type is not COMMENT:"
-    },
-    {
-      "file": "pathfix.py",
-      "category": "compatibility_risk",
-      "issue": "Python 3.10+ compatibility risk",
-      "details": "The use of the 'print' statement without parentheses may cause issues in Python 3.10+.",
-      "urgency": 5,
-      "evidence": "print(sys.version)"
-    },
-    {
-      "file": "pathfix.py",
-      "category": "maintainability",
-      "issue": "Magic numbers",
-      "details": "The use of magic numbers (e.g. 4) may make the code harder to understand and maintain.",
+      "details": "The code uses magic numbers (e.g., 4) without explanation, which can make the code harder to understand.",
       "urgency": 2,
       "evidence": "4-space indents"
     },
     {
+      "file": "pindent.py",
+      "category": "maintainability",
+      "issue": "Magic numbers",
+      "details": "The code uses magic numbers (e.g., 4) without explanation, which can make the code harder to understand.",
+      "urgency": 2,
+      "evidence": "4-space indents"
+    },
+    {
+      "file": "ptags.py",
+      "category": "maintainability",
+      "issue": "Magic numbers",
+      "details": "The code uses magic numbers (e.g., 4) without explanation, which can make the code harder to understand.",
+      "urgency": 2,
+      "evidence": "4-space indents"
+    },
+    {
+      "file": "pydoc3.py",
+      "category": "maintainability",
+      "issue": "Unused imports",
+      "details": "The code imports sys and argparse but does not use them.",
+      "urgency": 2,
+      "evidence": "import sys\nimport argparse"
+    },
+    {
+      "file": "pysource.py",
+      "category": "maintainability",
+      "issue": "Magic numbers",
+      "details": "The code uses magic numbers (e.g., 4) without explanation, which can make the code harder to understand.",
+      "urgency": 2,
+      "evidence": "4-space indents"
+    },
+    {
+      "file": "reindent.py",
+      "category": "maintainability",
+      "issue": "Magic numbers",
+      "details": "The code uses magic numbers (e.g., 4) without explanation, which can make the code harder to understand.",
+      "urgency": 2,
+      "evidence": "4-space indents"
+    },
+    {
+      "file": "reindent-rst.py",
+      "category": "maintainability",
+      "issue": "Magic numbers",
+      "details": "The code uses magic numbers (e.g., 4) without explanation, which can make the code harder to understand.",
+      "urgency": 2,
+      "evidence": "4-space indents"
+    },
+    {
+      "file": "rgrep.py",
+      "category": "maintainability",
+      "issue": "Magic numbers",
+      "details": "The code uses magic numbers (e.g., 4) without explanation, which can make the code harder to understand.",
+      "urgency": 2,
+      "evidence": "4-space indents"
+    },
+    {
+      "file": "run_tests.py",
+      "category": "maintainability",
+      "issue": "Unused imports",
+      "details": "The code imports sys and argparse but does not use them.",
+      "urgency": 2,
+      "evidence": "import sys\nimport argparse"
+    },
+    {
       "file": "stable_abi.py",
       "category": "compatibility_risk",
       "issue": "Python 3.10+ compatibility risk",
-      "details": "The use of the 'print' statement without parentheses may cause issues in Python 3.10+.",
-      "urgency": 5,
+      "details": "The code uses the sys.version_info tuple, which may not be compatible with Python 3.10+.",
+      "urgency": 4,
+      "evidence": "sys.version_info[:2]"
+    },
+    {
+      "file": "suff.py",
+      "category": "maintainability",
+      "issue": "Magic numbers",
+      "details": "The code uses magic numbers (e.g., 4) without explanation, which can make the code harder to understand.",
+      "urgency": 2,
+      "evidence": "4-space indents"
+    },
+    {
+      "file": "texi2html.py",
+      "category": "maintainability",
+      "issue": "Magic numbers",
+      "details": "The code uses magic numbers (e.g., 4) without explanation, which can make the code harder to understand.",
+      "urgency": 2,
+      "evidence": "4-space indents"
+    },
+    {
+      "file": "highlight.py",
+      "category": "maintainability",
+      "issue": "Unused imports",
+      "details": "The code imports sys and argparse but does not use them.",
+      "urgency": 2,
+      "evidence": "import sys\nimport argparse"
+    },
+    {
+      "file": "reindent.py",
+      "category": "compatibility_risk",
+      "issue": "Python 3.10+ compatibility risk",
+      "details": "The code uses the sys.version_info tuple, which may not be compatible with Python 3.10+.",
+      "urgency": 4,
+      "evidence": "sys.version_info[:2]"
+    },
+    {
+      "file": "stable_abi.py",
+      "category": "compatibility_risk",
+      "issue": "Python 3.10+ compatibility risk",
+      "details": "The code uses the sys.version_info tuple, which may not be compatible with Python 3.10+.",
+      "urgency": 4,
+      "evidence": "sys.version_info[:2]"
+    },
+    {
+      "file": "stable_abi.py",
+      "category": "compatibility_risk",
+      "issue": "Python 3.10+ compatibility risk",
+      "details": "The code uses the sys.version_info tuple, which may not be compatible with Python 3.10+.",
+      "urgency": 4,
+      "evidence": "sys.version_info[:2]"
+    },
+    {
+      "file": "demo/mcast.py",
+      "category": "compatibility_risk",
+      "issue": "Python 3.10+ compatibility risk",
+      "details": "The code may not be compatible with Python 3.10+ due to the use of the `print` statement without parentheses.",
+      "urgency": 3,
       "evidence": "print(sys.version)"
     },
     {
-      "file": "stable_abi.py",
+      "file": "demo/mcast.py",
       "category": "maintainability",
-      "issue": "Complex conditional statement",
-      "details": "Complex conditional statements may be difficult to understand and maintain.",
-      "urgency": 3,
-      "evidence": "if released is None or released <= sys.version_info:"
+      "issue": "Complex import statement",
+      "details": "The import statement is complex and may be difficult to understand or maintain.",
+      "urgency": 2,
+      "evidence": "from pprint import pprint"
     },
     {
-      "file": "stable_abi.py",
+      "file": "demo/mcast.py",
+      "category": "lint_issue",
+      "issue": "Unused import",
+      "details": "The import statement is not used in the code.",
+      "urgency": 1,
+      "evidence": "import sys"
+    },
+    {
+      "file": "demo/queens.py",
       "category": "maintainability",
       "issue": "Long lines",
       "details": "Lines longer than 79 characters may be difficult to read and maintain.",
       "urgency": 3,
-      "evidence": "if len(line) > 79:"
-    },
-    {
-      "file": "demo/mcast.py",
-      "category": "maintainability",
-      "issue": "Potential fragile pattern",
-      "details": "The use of eval() may pose a security risk if not properly sanitized.",
-      "urgency": 3,
-      "evidence": "string = eval(string)"
-    },
-    {
-      "file": "demo/mcast.py",
-      "category": "compatibility_risk",
-      "issue": "Python 3.10+ compatibility risk",
-      "details": "The use of print() function without specifying the encoding may cause issues in Python 3.10+.",
-      "urgency": 3,
-      "evidence": "print(fname + \":\" + str(nr), file=f)"
-    },
-    {
-      "file": "demo/mcast.py",
-      "category": "maintainability",
-      "issue": "Possible old syntax",
-      "details": "The use of the 're' module's 'match' function without specifying the flags may be deprecated.",
-      "urgency": 2,
-      "evidence": "if re.match(type_pattern, macro, re.DOTALL):"
-    },
-    {
-      "file": "demo/mcast.py",
-      "category": "maintainability",
-      "issue": "Possible old syntax",
-      "details": "The use of the 'sys.version_info' tuple may be replaced with 'sys.version_info.major' and 'sys.version_info.minor'.",
-      "urgency": 2,
-      "evidence": "PYTHONLIB = 'libpython%d.%d.a' % sys.version_info[:2]"
-    },
-    {
-      "file": "demo/queens.py",
-      "category": "maintainability",
-      "issue": "Possible fragile pattern",
-      "details": "The use of eval() may pose a security risk and is generally discouraged.",
-      "urgency": 3,
-      "evidence": "eval(string) in load_tokens(path)"
+      "evidence": "lines longer than 79 characters"
     },
     {
       "file": "demo/queens.py",
       "category": "compatibility_risk",
       "issue": "Python 3.10+ compatibility risk",
-      "details": "The use of print() function without specifying the encoding may cause issues in Python 3.10+.",
-      "urgency": 3,
-      "evidence": "print(fname + \":\" + str(nr), file=f)"
+      "details": "The code may not be compatible with Python 3.10+ due to the use of the 'print' function without parentheses.",
+      "urgency": 4,
+      "evidence": "print() function call"
     },
     {
       "file": "demo/queens.py",
-      "category": "maintainability",
-      "issue": "Possible lint issue",
-      "details": "The use of sys.version_info may be better replaced with sys.version.",
+      "category": "lint_issue",
+      "issue": "Unused import",
+      "details": "The 'os' module is imported but not used.",
       "urgency": 2,
-      "evidence": "sys.version_info[:2]"
-    },
-    {
-      "file": "demo/queens.py",
-      "category": "maintainability",
-      "issue": "Possible lint issue",
-      "details": "The use of sys.stderr may be better replaced with logging.",
-      "urgency": 2,
-      "evidence": "sys.stderr"
-    },
-    {
-      "file": "demo/queens.py",
-      "category": "maintainability",
-      "issue": "Possible lint issue",
-      "details": "The use of sys.argv may be better replaced with argparse.",
-      "urgency": 2,
-      "evidence": "sys.argv"
-    },
-    {
-      "file": "demo/queens.py",
-      "category": "maintainability",
-      "issue": "Possible lint issue",
-      "details": "The use of sys.path may be better replaced with importlib.",
-      "urgency": 2,
-      "evidence": "sys.path"
-    },
-    {
-      "file": "demo/queens.py",
-      "category": "maintainability",
-      "issue": "Possible lint issue",
-      "details": "The use of sys.modules may be better replaced with importlib.",
-      "urgency": 2,
-      "evidence": "sys.modules"
-    },
-    {
-      "file": "demo/queens.py",
-      "category": "maintainability",
-      "issue": "Possible lint issue",
-      "details": "The use of sys.platform may be better replaced with platform.",
-      "urgency": 2,
-      "evidence": "sys.platform"
-    },
-    {
-      "file": "demo/queens.py",
-      "category": "maintainability",
-      "issue": "Possible lint issue",
-      "details": "The use of sys.getrecursionlimit() may be better replaced with sys.setrecursionlimit().",
-      "urgency": 2,
-      "evidence": "sys.getrecursionlimit()"
-    },
-    {
-      "file": "demo/queens.py",
-      "category": "maintainability",
-      "issue": "Possible lint issue",
-      "details": "The use of sys.float_info may be better replaced with sys.float_info.",
-      "urgency": 2,
-      "evidence": "sys.float_info"
-    },
-    {
-      "file": "demo/queens.py",
-      "category": "maintainability",
-      "issue": "Possible lint issue",
-      "details": "The use of sys.int_info may be better replaced with sys.int_info.",
-      "urgency": 2,
-      "evidence": "sys.int_info"
-    },
-    {
-      "file": "demo/queens.py",
-      "category": "maintainability",
-      "issue": "Possible lint issue",
-      "details": "The use of sys.version may be better replaced with sys.version_info.",
-      "urgency": 2,
-      "evidence": "sys.version"
-    },
-    {
-      "file": "demo/queens.py",
-      "category": "maintainability",
-      "issue": "Possible lint issue",
-      "details": "The use of sys.getsizeof() may be better replaced with sys.getsizeof().",
-      "urgency": 2,
-      "evidence": "sys.getsizeof()"
+      "evidence": "import os"
     },
     {
       "file": "demo/redemo.py",
@@ -462,7 +318,7 @@
       "issue": "Python 3.10+ compatibility risk",
       "details": "The code may not be compatible with Python 3.10+ due to the use of the `print` statement without parentheses.",
       "urgency": 3,
-      "evidence": "print(fname + \":\" + str(nr), file=f)"
+      "evidence": "print(sys.version)"
     },
     {
       "file": "demo/redemo.py",
@@ -470,74 +326,86 @@
       "issue": "Complex import statement",
       "details": "The import statement is complex and may be difficult to understand or maintain.",
       "urgency": 2,
-      "evidence": "import sys, os, re, argparse, ensurepip, json, urllib.request"
-    },
-    {
-      "file": "demo/redemo.py",
-      "category": "maintainability",
-      "issue": "Long function",
-      "details": "The function is long and may be difficult to understand or maintain.",
-      "urgency": 2,
-      "evidence": "def main():"
+      "evidence": "import sys, argparse, pprint"
     },
     {
       "file": "demo/redemo.py",
       "category": "lint_issue",
       "issue": "Unused import",
-      "details": "The import statement is not used in the code.",
+      "details": "The import statement for `pprint` is not used in the code.",
       "urgency": 1,
       "evidence": "import pprint"
     },
     {
       "file": "demo/redemo.py",
       "category": "maintainability",
-      "issue": "Complex conditional statement",
-      "details": "The conditional statement is complex and may be difficult to understand or maintain.",
+      "issue": "Long function",
+      "details": "The `main` function is long and may be difficult to understand or maintain.",
       "urgency": 2,
-      "evidence": "if args.section and (args.browser or args.complete):"
+      "evidence": "def main():"
+    },
+    {
+      "file": "demo/redemo.py",
+      "category": "compatibility_risk",
+      "issue": "Use of `sys.version`",
+      "details": "The use of `sys.version` may not be compatible with Python 3.10+.",
+      "urgency": 3,
+      "evidence": "print(sys.version)"
     },
     {
       "file": "demo/redemo.py",
       "category": "maintainability",
-      "issue": "Long function call",
-      "details": "The function call is long and may be difficult to understand or maintain.",
+      "issue": "Magic numbers",
+      "details": "The code uses magic numbers (e.g. 1, 2, 3) which may make it difficult to understand or maintain.",
       "urgency": 2,
-      "evidence": "parser.error('The -s/--section option is incompatible with ' 'the -b/--browser or -c/--complete options')"
+      "evidence": "if errors: sys.exit(1)"
     },
     {
-      "file": "demo/redemo.py",
+      "file": "demo/rpython.py",
       "category": "maintainability",
-      "issue": "Magic number",
-      "details": "The magic number 256 is used in the code.",
-      "urgency": 1,
-      "evidence": "NT_OFFSET = 256"
+      "issue": "Long function",
+      "details": "Functions should be kept short and focused on a single task.",
+      "urgency": 3,
+      "evidence": "def ci(pull_request):"
     },
     {
-      "file": "rpython.py",
+      "file": "demo/rpython.py",
+      "category": "maintainability",
+      "issue": "Complex function",
+      "details": "Functions should be kept simple and easy to understand.",
+      "urgency": 3,
+      "evidence": "def ci(pull_request):"
+    },
+    {
+      "file": "demo/rpython.py",
       "category": "compatibility_risk",
       "issue": "Python 3.10+ compatibility risk",
-      "details": "The code may not be compatible with Python 3.10+ due to the use of the `re` module's `match` method with the `re.MULTILINE` flag.",
-      "urgency": 3,
-      "evidence": "tokenizer = re.compile(r\"...\", re.MULTILINE)"
+      "details": "The code may not be compatible with Python 3.10+ due to the use of Python 3.8 syntax.",
+      "urgency": 5,
+      "evidence": "#!/usr/bin/env python3"
     },
     {
-      "file": "rpython.py",
-      "category": "maintainability",
-      "issue": "Complex regular expression",
-      "details": "The regular expression used in the tokenizer may be complex and difficult to understand.",
-      "urgency": 2,
-      "evidence": "tokenizer = re.compile(r\"...\", re.MULTILINE)"
-    },
-    {
-      "file": "rpython.py",
+      "file": "demo/rpython.py",
       "category": "lint_issue",
       "issue": "Unused import",
-      "details": "The `functools` module is imported but not used.",
-      "urgency": 1,
-      "evidence": "import functools"
+      "details": "The import statement is not being used.",
+      "urgency": 2,
+      "evidence": "import sys"
+    },
+    {
+      "file": "demo/rpython.py",
+      "category": "maintainability",
+      "issue": "Deep nesting",
+      "details": "The code has deep nesting which can make it hard to read and understand.",
+      "urgency": 3,
+      "evidence": "if not (type is OP and token == ','): break"
     }
   ],
   "failures": [
+    {
+      "file": "demo/eiffel.py",
+      "error": "Failed to parse JSON after retries"
+    },
     {
       "file": "demo/life.py",
       "error": "Failed to parse JSON after retries"
