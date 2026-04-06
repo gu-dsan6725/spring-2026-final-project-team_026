@@ -29,6 +29,7 @@ class Debt_Detector():
         default_k: int = 10,
         use_mmr: bool = False,
         quest_prompt_path: str = "debt_detector_prompt.txt", 
+        quest_prompt_overall_path: str = "debt_detector_overall_prompt.txt", 
     ):
         if dir_loader == None:
             agent = DirectoryRAGAgent(
@@ -48,12 +49,16 @@ class Debt_Detector():
             self.file_ls = []
             with open(quest_prompt_path, "r", encoding="utf-8") as f:
                 self.prompt = f.read()
+            with open(quest_prompt_overall_path, "r", encoding="utf-8") as f:
+                self.overall_prompt = f.read()
         else:
             self.agent = dir_loader
             self.directory_path = dir_loader.directory_path
             self.file_ls = []
             with open(quest_prompt_path, "r", encoding="utf-8") as f:
                 self.prompt = f.read()
+            with open(quest_prompt_overall_path, "r", encoding="utf-8") as f:
+                self.overall_prompt = f.read()
 
     def file_detector(self):
         """
@@ -92,6 +97,7 @@ class Debt_Detector():
 
             Your job:
             Fix the following malformed JSON and return ONLY valid JSON.
+            If the malformed JSON end at middle of somewhere, clean the broken part and output fixed JSON.
 
             Rules:
             - Do NOT add explanations
@@ -109,7 +115,7 @@ class Debt_Detector():
             OUTPUT:
         """
 
-        response = self.agent.llm.invoke(full_prompt)
+        response = self.agent.llm.invoke(full_prompt).content
 
         # ChatLiteLLM may return object or string depending on backend
         if hasattr(response, "content"):
@@ -159,6 +165,12 @@ class Debt_Detector():
     def debt_search(self, is_test=True):
         # Only pick 10 file in list for test, 
         # I don't want to burn my wallet for simple test!
+        """
+        The debt search agent aim to provide both overall view across directory on tech debt
+        and in detailed tech debt in each specific file.
+
+        It will generate a JSON which contain both info above.
+        """
 
         self.file_detector()
         if is_test:
@@ -171,9 +183,28 @@ class Debt_Detector():
 
         all_findings = []
         failed_files = []
+
+        # Overall assessment
+        answer = self.agent.ask(self.overall_prompt)
+        try:
+            output = self.json_extractor(answer)
+            findings = output.get("findings", [])
+            all_findings.extend(findings)
+        except Exception as e:
+            print(f"\nFail to read output to JSON!! {e}")
+            failed_files.append({"file": "OVERALL", "error": str(e)})
+
         for file in ls:
+            file_path = Path(self.directory_path) / file
+
+            if not file_path.exists():
+                raise FileNotFoundError(f"File not found: {file_path}")
+
+            content = file_path.read_text(encoding="utf-8", errors="replace")
+            full_prompt = content + self.prompt + f"\n File Directory: {file}\n"
             print(f"\n Start to detect tech debt in {file}")
-            answer = self.agent.inspect_file(self.prompt, file)
+            answer = self.agent.llm.invoke(full_prompt).content
+            # print(answer)
             try:
                 output = self.json_extractor(answer)
                 findings = output.get("findings", [])

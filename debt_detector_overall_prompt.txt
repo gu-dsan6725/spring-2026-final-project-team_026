@@ -1,6 +1,6 @@
 You are analyzing a codebase for possible technical debt.
 
-You must scan the retrieved code carefully and identify possible issues such as:
+You must scan the retrieved code carefully and identify possible issues in pattern such as:
 - outdated or deprecated packages
 - deprecated imports or APIs
 - Python 3.10+ compatibility risks
@@ -16,10 +16,10 @@ Required output format:
 {
   "findings": [
     {
-      "file": "You MUST use the file name (including relative path!) at the end of this prompt! MUST",
+      "file": "OVERALL",
       "category": "lint_issue",
       "issue": "short name of the problem",
-      "details": "short explanation of why this may be technical debt",
+      "details": "short explanation of why this may be universal technical debt across directory",
       "urgency": 3,
       "evidence": "specific code pattern, import, API, or behavior seen in the file"
     }
@@ -42,7 +42,6 @@ Rules:
   4 = serious issue / likely needs fixing soon
   5 = critical / likely broken, highly risky, or strongly outdated
 - One finding per issue
-- Include the specific file path whenever possible
 - If no issues are found, return:
   {"findings": []}
 - Do not invent issues not supported by the code

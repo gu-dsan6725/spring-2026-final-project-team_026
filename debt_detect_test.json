@@ -1,414 +1,357 @@
 {
   "findings": [
     {
-      "file": "pdeps.py",
-      "category": "maintainability",
-      "issue": "Potential code duplication",
-      "details": "The code in pdeps.py may be duplicated in other files, making it harder to maintain.",
-      "urgency": 3,
-      "evidence": "The function pdeps() is not imported from any other file, suggesting it may be duplicated."
-    },
-    {
-      "file": "pdeps.py",
-      "category": "maintainability",
-      "issue": "Long function",
-      "details": "The function pdeps() is quite long and complex, making it harder to understand and maintain.",
-      "urgency": 4,
-      "evidence": "The function pdeps() has many lines of code and uses multiple loops and conditional statements."
-    },
-    {
-      "file": "pdeps.py",
-      "category": "compatibility_risk",
-      "issue": "Potential compatibility issue with Python 3.10+",
-      "details": "The code in pdeps.py uses the 'print' statement, which may not be compatible with Python 3.10+.",
-      "urgency": 3,
-      "evidence": "The line 'print(data)' uses the 'print' statement, which may not be compatible with Python 3.10+."
-    },
-    {
-      "file": "pdeps.py",
-      "category": "maintainability",
-      "issue": "Potential code smell",
-      "details": "The code in pdeps.py uses a lot of global variables, which may make it harder to understand and maintain.",
-      "urgency": 3,
-      "evidence": "The code in pdeps.py uses the 'sys' module, which may indicate a potential code smell."
-    },
-    {
-      "file": "pdeps.py",
-      "category": "maintainability",
-      "issue": "Potential code smell",
-      "details": "The code in pdeps.py uses a lot of magic numbers, which may make it harder to understand and maintain.",
-      "urgency": 3,
-      "evidence": "The code in pdeps.py uses numbers like 256 and 4, which may indicate a potential code smell."
-    },
-    {
-      "file": "pdeps.py",
-      "category": "maintainability",
-      "issue": "Potential code smell",
-      "details": "The code in pdeps.py uses a lot of complex conditional statements, which may make it harder to understand and maintain.",
-      "urgency": 4,
-      "evidence": "The code in pdeps.py uses complex conditional statements like 'if len(items) != 3:'."
-    },
-    {
-      "file": "pdeps.py",
-      "category": "maintainability",
-      "issue": "Potential code smell",
-      "details": "The code in pdeps.py uses a lot of nested loops, which may make it harder to understand and maintain.",
-      "urgency": 4,
-      "evidence": "The code in pdeps.py uses nested loops like 'for line in lines:'."
-    },
-    {
-      "file": "demo/beer.py",
-      "category": "maintainability",
-      "issue": "Long lines",
-      "details": "Lines longer than 79 characters may be difficult to read and maintain.",
-      "urgency": 3,
-      "evidence": "if len(parts) < 3: continue"
-    },
-    {
-      "file": "demo/beer.py",
-      "category": "maintainability",
-      "issue": "Complex conditional",
-      "details": "Complex conditionals may be difficult to understand and maintain.",
-      "urgency": 3,
-      "evidence": "if re.match(type_pattern, macro, re.DOTALL):"
-    },
-    {
-      "file": "demo/beer.py",
+      "file": "OVERALL",
       "category": "compatibility_risk",
       "issue": "Python 3.10+ compatibility risk",
-      "details": "The code may not be compatible with Python 3.10+ due to the use of the 're.DOTALL' flag.",
-      "urgency": 5,
-      "evidence": "re.DOTALL"
+      "details": "The code may not be compatible with Python 3.10+ due to the use of the `__future__` module and the `getMandatoryRelease()` method.",
+      "urgency": 3,
+      "evidence": "object = getattr(__future__, f, None)"
     },
     {
-      "file": "demo/beer.py",
+      "file": "OVERALL",
+      "category": "maintainability",
+      "issue": "Complex regular expression",
+      "details": "The regular expression `re.match(type_pattern, macro, re.DOTALL)` may be difficult to understand and maintain.",
+      "urgency": 2,
+      "evidence": "re.match(type_pattern, macro, re.DOTALL)"
+    },
+    {
+      "file": "OVERALL",
+      "category": "lint_issue",
+      "issue": "Unused import",
+      "details": "The import `functools` is not used in the code.",
+      "urgency": 1,
+      "evidence": "from functools import partial"
+    },
+    {
+      "file": "OVERALL",
+      "category": "compatibility_risk",
+      "issue": "Use of `sys.version_info`",
+      "details": "The code uses `sys.version_info` which may not be compatible with Python 3.10+.",
+      "urgency": 3,
+      "evidence": "released = object.getMandatoryRelease() if released is None or released <= sys.version_info:"
+    },
+    {
+      "file": "OVERALL",
       "category": "maintainability",
       "issue": "Deep nesting",
-      "details": "Deeply nested code may be difficult to understand and maintain.",
-      "urgency": 3,
-      "evidence": "if type is not NEWLINE: errprint(\"Skipping file %r; can't parse line %d:\n%s\" % (self.fname, srow, line)) return []"
-    },
-    {
-      "file": "demo/hanoi.py",
-      "category": "maintainability",
-      "issue": "Long function",
-      "details": "Functions should be kept short and focused on a single task.",
-      "urgency": 3,
-      "evidence": "def hanoi(n, source, target, aux):"
-    },
-    {
-      "file": "demo/hanoi.py",
-      "category": "maintainability",
-      "issue": "Complex function",
-      "details": "Functions should be kept simple and easy to understand.",
-      "urgency": 3,
-      "evidence": "def hanoi(n, source, target, aux):"
-    },
-    {
-      "file": "demo/hanoi.py",
-      "category": "maintainability",
-      "issue": "Magic numbers",
-      "details": "Magic numbers should be replaced with named constants.",
+      "details": "The code has deep nesting which may make it difficult to understand and maintain.",
       "urgency": 2,
-      "evidence": "if n == 1:"
+      "evidence": "for item in manifest.select(REST_ROLES.keys(), include_abi_only=False):"
     },
     {
-      "file": "demo/hanoi.py",
+      "file": "README.md",
       "category": "maintainability",
-      "issue": "Lack of comments",
-      "details": "Functions and code should be well-documented with comments.",
-      "urgency": 2,
-      "evidence": "def hanoi(n, source, target, aux):"
+      "issue": "Outdated directory structure",
+      "details": "The directory structure is based on an old version of the CPython repository.",
+      "urgency": 3,
+      "evidence": "The directory structure is based on Tools/demo/ and Tools/scripts/, which are no longer used in the CPython repository."
     },
     {
-      "file": "demo/hanoi.py",
+      "file": "README.md",
       "category": "compatibility_risk",
-      "issue": "Python 2.x compatibility",
-      "details": "The code may not be compatible with Python 3.x.",
-      "urgency": 5,
-      "evidence": "import sys"
-    },
-    {
-      "file": "pathfix.py",
-      "category": "maintainability",
-      "issue": "Shebang line",
-      "details": "The shebang line is hardcoded to /usr/local/bin/python, which may not be the intended Python interpreter.",
-      "urgency": 3,
-      "evidence": "#!/usr/local/bin/python"
-    },
-    {
-      "file": "pdeps.py",
-      "category": "maintainability",
-      "issue": "Magic numbers",
-      "details": "The code uses magic numbers (e.g., 4) without explanation, which can make the code harder to understand.",
-      "urgency": 2,
-      "evidence": "4-space indents"
-    },
-    {
-      "file": "pindent.py",
-      "category": "maintainability",
-      "issue": "Magic numbers",
-      "details": "The code uses magic numbers (e.g., 4) without explanation, which can make the code harder to understand.",
-      "urgency": 2,
-      "evidence": "4-space indents"
-    },
-    {
-      "file": "ptags.py",
-      "category": "maintainability",
-      "issue": "Magic numbers",
-      "details": "The code uses magic numbers (e.g., 4) without explanation, which can make the code harder to understand.",
-      "urgency": 2,
-      "evidence": "4-space indents"
-    },
-    {
-      "file": "pydoc3.py",
-      "category": "maintainability",
-      "issue": "Unused imports",
-      "details": "The code imports sys and argparse but does not use them.",
-      "urgency": 2,
-      "evidence": "import sys\nimport argparse"
-    },
-    {
-      "file": "pysource.py",
-      "category": "maintainability",
-      "issue": "Magic numbers",
-      "details": "The code uses magic numbers (e.g., 4) without explanation, which can make the code harder to understand.",
-      "urgency": 2,
-      "evidence": "4-space indents"
-    },
-    {
-      "file": "reindent.py",
-      "category": "maintainability",
-      "issue": "Magic numbers",
-      "details": "The code uses magic numbers (e.g., 4) without explanation, which can make the code harder to understand.",
-      "urgency": 2,
-      "evidence": "4-space indents"
-    },
-    {
-      "file": "reindent-rst.py",
-      "category": "maintainability",
-      "issue": "Magic numbers",
-      "details": "The code uses magic numbers (e.g., 4) without explanation, which can make the code harder to understand.",
-      "urgency": 2,
-      "evidence": "4-space indents"
-    },
-    {
-      "file": "rgrep.py",
-      "category": "maintainability",
-      "issue": "Magic numbers",
-      "details": "The code uses magic numbers (e.g., 4) without explanation, which can make the code harder to understand.",
-      "urgency": 2,
-      "evidence": "4-space indents"
-    },
-    {
-      "file": "run_tests.py",
-      "category": "maintainability",
-      "issue": "Unused imports",
-      "details": "The code imports sys and argparse but does not use them.",
-      "urgency": 2,
-      "evidence": "import sys\nimport argparse"
-    },
-    {
-      "file": "stable_abi.py",
-      "category": "compatibility_risk",
-      "issue": "Python 3.10+ compatibility risk",
-      "details": "The code uses the sys.version_info tuple, which may not be compatible with Python 3.10+.",
+      "issue": "Python 3.10+ compatibility risks",
+      "details": "Some scripts may not be compatible with Python 3.10+ due to outdated syntax or APIs.",
       "urgency": 4,
-      "evidence": "sys.version_info[:2]"
+      "evidence": "The presence of Python 2.x specific code and outdated imports."
     },
     {
-      "file": "suff.py",
-      "category": "maintainability",
-      "issue": "Magic numbers",
-      "details": "The code uses magic numbers (e.g., 4) without explanation, which can make the code harder to understand.",
-      "urgency": 2,
-      "evidence": "4-space indents"
-    },
-    {
-      "file": "texi2html.py",
-      "category": "maintainability",
-      "issue": "Magic numbers",
-      "details": "The code uses magic numbers (e.g., 4) without explanation, which can make the code harder to understand.",
-      "urgency": 2,
-      "evidence": "4-space indents"
-    },
-    {
-      "file": "highlight.py",
-      "category": "maintainability",
-      "issue": "Unused imports",
-      "details": "The code imports sys and argparse but does not use them.",
-      "urgency": 2,
-      "evidence": "import sys\nimport argparse"
-    },
-    {
-      "file": "reindent.py",
-      "category": "compatibility_risk",
-      "issue": "Python 3.10+ compatibility risk",
-      "details": "The code uses the sys.version_info tuple, which may not be compatible with Python 3.10+.",
-      "urgency": 4,
-      "evidence": "sys.version_info[:2]"
-    },
-    {
-      "file": "stable_abi.py",
-      "category": "compatibility_risk",
-      "issue": "Python 3.10+ compatibility risk",
-      "details": "The code uses the sys.version_info tuple, which may not be compatible with Python 3.10+.",
-      "urgency": 4,
-      "evidence": "sys.version_info[:2]"
-    },
-    {
-      "file": "stable_abi.py",
-      "category": "compatibility_risk",
-      "issue": "Python 3.10+ compatibility risk",
-      "details": "The code uses the sys.version_info tuple, which may not be compatible with Python 3.10+.",
-      "urgency": 4,
-      "evidence": "sys.version_info[:2]"
-    },
-    {
-      "file": "demo/mcast.py",
-      "category": "compatibility_risk",
-      "issue": "Python 3.10+ compatibility risk",
-      "details": "The code may not be compatible with Python 3.10+ due to the use of the `print` statement without parentheses.",
-      "urgency": 3,
-      "evidence": "print(sys.version)"
-    },
-    {
-      "file": "demo/mcast.py",
-      "category": "maintainability",
-      "issue": "Complex import statement",
-      "details": "The import statement is complex and may be difficult to understand or maintain.",
-      "urgency": 2,
-      "evidence": "from pprint import pprint"
-    },
-    {
-      "file": "demo/mcast.py",
+      "file": "README.md",
       "category": "lint_issue",
-      "issue": "Unused import",
-      "details": "The import statement is not used in the code.",
-      "urgency": 1,
-      "evidence": "import sys"
-    },
-    {
-      "file": "demo/queens.py",
-      "category": "maintainability",
-      "issue": "Long lines",
-      "details": "Lines longer than 79 characters may be difficult to read and maintain.",
+      "issue": "Old syntax or legacy grammar style",
+      "details": "Some scripts use outdated syntax or legacy grammar style, which may cause issues with modern Python versions.",
       "urgency": 3,
-      "evidence": "lines longer than 79 characters"
+      "evidence": "The presence of old Python syntax, such as print statements without parentheses."
     },
     {
-      "file": "demo/queens.py",
+      "file": "README.md",
+      "category": "maintainability",
+      "issue": "Fragile patterns",
+      "details": "Some scripts may contain fragile patterns, such as hardcoded paths or assumptions about the environment.",
+      "urgency": 3,
+      "evidence": "The presence of hardcoded paths and assumptions about the environment."
+    },
+    {
+      "file": "demo/beer.py",
+      "category": "maintainability",
+      "issue": "Magic number",
+      "details": "The number 100 is used directly in the code without explanation. It may be better to define a constant for this value.",
+      "urgency": 2,
+      "evidence": "n = 100"
+    },
+    {
+      "file": "demo/beer.py",
       "category": "compatibility_risk",
       "issue": "Python 3.10+ compatibility risk",
-      "details": "The code may not be compatible with Python 3.10+ due to the use of the 'print' function without parentheses.",
-      "urgency": 4,
-      "evidence": "print() function call"
-    },
-    {
-      "file": "demo/queens.py",
-      "category": "lint_issue",
-      "issue": "Unused import",
-      "details": "The 'os' module is imported but not used.",
-      "urgency": 2,
-      "evidence": "import os"
-    },
-    {
-      "file": "demo/redemo.py",
-      "category": "compatibility_risk",
-      "issue": "Python 3.10+ compatibility risk",
-      "details": "The code may not be compatible with Python 3.10+ due to the use of the `print` statement without parentheses.",
+      "details": "The code uses the sys.argv[1:] syntax, which may not work as expected in Python 3.10+ due to changes in the way command-line arguments are handled.",
       "urgency": 3,
-      "evidence": "print(sys.version)"
+      "evidence": "if sys.argv[1:]"
     },
     {
-      "file": "demo/redemo.py",
+      "file": "demo/beer.py",
       "category": "maintainability",
-      "issue": "Complex import statement",
-      "details": "The import statement is complex and may be difficult to understand or maintain.",
-      "urgency": 2,
-      "evidence": "import sys, argparse, pprint"
-    },
-    {
-      "file": "demo/redemo.py",
-      "category": "lint_issue",
-      "issue": "Unused import",
-      "details": "The import statement for `pprint` is not used in the code.",
-      "urgency": 1,
-      "evidence": "import pprint"
-    },
-    {
-      "file": "demo/redemo.py",
-      "category": "maintainability",
-      "issue": "Long function",
-      "details": "The `main` function is long and may be difficult to understand or maintain.",
-      "urgency": 2,
-      "evidence": "def main():"
-    },
-    {
-      "file": "demo/redemo.py",
-      "category": "compatibility_risk",
-      "issue": "Use of `sys.version`",
-      "details": "The use of `sys.version` may not be compatible with Python 3.10+.",
+      "issue": "No error handling for invalid input",
+      "details": "The code does not handle the case where the user passes an invalid input to the script. This may lead to unexpected behavior or errors.",
       "urgency": 3,
-      "evidence": "print(sys.version)"
+      "evidence": "if sys.argv[1:]"
     },
     {
-      "file": "demo/redemo.py",
+      "file": "demo/beer.py",
       "category": "maintainability",
-      "issue": "Magic numbers",
-      "details": "The code uses magic numbers (e.g. 1, 2, 3) which may make it difficult to understand or maintain.",
+      "issue": "No docstrings",
+      "details": "The code does not include any docstrings, which makes it harder for other developers to understand how to use the script.",
       "urgency": 2,
-      "evidence": "if errors: sys.exit(1)"
+      "evidence": "The script does not include any docstrings"
     },
-    {
-      "file": "demo/rpython.py",
-      "category": "maintainability",
-      "issue": "Long function",
-      "details": "Functions should be kept short and focused on a single task.",
-      "urgency": 3,
-      "evidence": "def ci(pull_request):"
-    },
-    {
-      "file": "demo/rpython.py",
-      "category": "maintainability",
-      "issue": "Complex function",
-      "details": "Functions should be kept simple and easy to understand.",
-      "urgency": 3,
-      "evidence": "def ci(pull_request):"
-    },
-    {
-      "file": "demo/rpython.py",
-      "category": "compatibility_risk",
-      "issue": "Python 3.10+ compatibility risk",
-      "details": "The code may not be compatible with Python 3.10+ due to the use of Python 3.8 syntax.",
-      "urgency": 5,
-      "evidence": "#!/usr/bin/env python3"
-    },
-    {
-      "file": "demo/rpython.py",
-      "category": "lint_issue",
-      "issue": "Unused import",
-      "details": "The import statement is not being used.",
-      "urgency": 2,
-      "evidence": "import sys"
-    },
-    {
-      "file": "demo/rpython.py",
-      "category": "maintainability",
-      "issue": "Deep nesting",
-      "details": "The code has deep nesting which can make it hard to read and understand.",
-      "urgency": 3,
-      "evidence": "if not (type is OP and token == ','): break"
-    }
-  ],
-  "failures": [
     {
       "file": "demo/eiffel.py",
-      "error": "Failed to parse JSON after retries"
+      "category": "maintainability",
+      "issue": "Use of deprecated import",
+      "details": "The import 'types.FunctionType as function' is deprecated since Python 3.0 and removed in Python 3.10.",
+      "urgency": 5,
+      "evidence": "import unittest\nfrom types import FunctionType as function"
+    },
+    {
+      "file": "demo/eiffel.py",
+      "category": "compatibility_risk",
+      "issue": "Python 3.10+ compatibility risk",
+      "details": "The code may not be compatible with Python 3.10+ due to the use of deprecated imports and APIs.",
+      "urgency": 4,
+      "evidence": "The use of 'types.FunctionType as function' and the 'unittest.main()' call may cause compatibility issues."
+    },
+    {
+      "file": "demo/eiffel.py",
+      "category": "maintainability",
+      "issue": "Use of old syntax",
+      "details": "The code uses the 'assert' statement with a message, which is not recommended in modern Python.",
+      "urgency": 3,
+      "evidence": "assert arg > 0"
+    },
+    {
+      "file": "demo/hanoi.py",
+      "category": "maintainability",
+      "issue": "Long-running while loop in run method",
+      "details": "The run method contains a long-running while loop that may block the Tkinter event loop. This can lead to performance issues and make the GUI unresponsive.",
+      "urgency": 3,
+      "evidence": "while True: hanoi(self.n, 0, 1, 2, self.report)"
+    },
+    {
+      "file": "demo/hanoi.py",
+      "category": "compatibility_risk",
+      "issue": "Use of deprecated getint method",
+      "details": "The getint method is deprecated in Tkinter and may be removed in future versions. It's recommended to use the get method instead.",
+      "urgency": 2,
+      "evidence": "width, height = tk.getint(c['width']), tk.getint(c['height'])"
+    },
+    {
+      "file": "demo/hanoi.py",
+      "category": "maintainability",
+      "issue": "Magic numbers in the code",
+      "details": "The code contains several magic numbers (e.g., 10, 16, 2, 3) that are not clearly explained. It's recommended to define named constants for these values to improve code readability.",
+      "urgency": 2,
+      "evidence": "pegwidth = 10, pegheight = height//2, pegdist = width//3, pieceheight = pegheight//16"
+    },
+    {
+      "file": "demo/hanoi.py",
+      "category": "maintainability",
+      "issue": "Deep nesting in the report method",
+      "details": "The report method contains several nested while loops that may be difficult to understand and maintain. It's recommended to refactor the code to reduce nesting.",
+      "urgency": 3,
+      "evidence": "while True: ... if y2 < ay1: break ... while True: ... if center == newcenter: break"
     },
     {
       "file": "demo/life.py",
-      "error": "Failed to parse JSON after retries"
+      "category": "maintainability",
+      "issue": "Long function",
+      "details": "The keyloop function is quite long and complex, which may make it harder to understand and maintain.",
+      "urgency": 3,
+      "evidence": "def keyloop(stdscr):"
+    },
+    {
+      "file": "demo/life.py",
+      "category": "maintainability",
+      "issue": "Magic numbers",
+      "details": "The code uses magic numbers (e.g., 0, 1, 2, 3, 4, 5, 6, 7) without explanation, which may make it harder to understand.",
+      "urgency": 2,
+      "evidence": "curses.init_pair(1, curses.COLOR_BLUE, 0), curses.init_pair(2, curses.COLOR_CYAN, 0), curses.init_pair(3, curses.COLOR_GREEN, 0), curses.init_pair(4, curses.COLOR_MAGENTA, 0), curses.init_pair(5, curses.COLOR_RED, 0), curses.init_pair(6, curses.COLOR_YELLOW, 0), curses.init_pair(7, curses.COLOR_WHITE, 0)"
+    },
+    {
+      "file": "demo/life.py",
+      "category": "compatibility_risk",
+      "issue": "Possible compatibility risk with Python 3.10+",
+      "details": "The code uses the 'curses' module, which may have compatibility issues with Python 3.10+.",
+      "urgency": 3,
+      "evidence": "import curses"
+    },
+    {
+      "file": "demo/markov.py",
+      "category": "compatibility_risk",
+      "issue": "Python 3.10+ compatibility risk",
+      "details": "The code uses Python 3.3's `random.choice` function, which may not be compatible with Python 3.10+.",
+      "urgency": 3,
+      "evidence": "random.choice"
+    },
+    {
+      "file": "demo/markov.py",
+      "category": "maintainability",
+      "issue": "Complex code structure",
+      "details": "The code has a complex structure with multiple nested functions and conditional statements, making it harder to understand and maintain.",
+      "urgency": 3,
+      "evidence": "nested functions and conditional statements"
+    },
+    {
+      "file": "demo/markov.py",
+      "category": "maintainability",
+      "issue": "Magic numbers",
+      "details": "The code uses magic numbers (e.g., 2, 72) without explanation, making it harder to understand the code's intent.",
+      "urgency": 2,
+      "evidence": "magic numbers (e.g., 2, 72)"
+    },
+    {
+      "file": "demo/markov.py",
+      "category": "maintainability",
+      "issue": "Lack of comments",
+      "details": "The code lacks comments, making it harder to understand the code's intent and functionality.",
+      "urgency": 2,
+      "evidence": "lack of comments"
+    },
+    {
+      "file": "demo/markov.py",
+      "category": "compatibility_risk",
+      "issue": "Python 3.3's `getopt` module",
+      "details": "The code uses Python 3.3's `getopt` module, which may not be compatible with Python 3.10+.",
+      "urgency": 3,
+      "evidence": "import getopt"
+    },
+    {
+      "file": "demo/mcast.py",
+      "category": "compatibility_risk",
+      "issue": "Python 3.10+ compatibility risk due to usage of `@` in struct.pack format string",
+      "details": "The `@` symbol is used to specify the byte order in struct.pack, which may not be compatible with Python 3.10+.",
+      "urgency": 3,
+      "evidence": "struct.pack('@i', MYTTL)"
+    },
+    {
+      "file": "demo/mcast.py",
+      "category": "maintainability",
+      "issue": "Magic numbers and strings",
+      "details": "The code uses magic numbers and strings (e.g. `MYPORT`, `MYGROUP_4`, `MYGROUP_6`, `MYTTL`) which may be difficult to understand and maintain.",
+      "urgency": 2,
+      "evidence": "MYPORT = 8123, MYGROUP_4 = '225.0.0.250', MYGROUP_6 = 'ff15:7079:7468:6f6e:6465:6d6f:6d63:6173', MYTTL = 1"
+    },
+    {
+      "file": "demo/mcast.py",
+      "category": "maintainability",
+      "issue": "Long function names",
+      "details": "The function names `sender` and `receiver` are quite long and may be difficult to understand.",
+      "urgency": 1,
+      "evidence": "def sender(group): and def receiver(group):"
+    },
+    {
+      "file": "demo/mcast.py",
+      "category": "maintainability",
+      "issue": "Deep nesting",
+      "details": "The code has deep nesting in the `receiver` function, which may be difficult to understand and maintain.",
+      "urgency": 2,
+      "evidence": "while True: ... while True: ..."
+    },
+    {
+      "file": "demo/queens.py",
+      "category": "maintainability",
+      "issue": "Long function names",
+      "details": "Function names like `solve` and `display` are quite long and may be difficult to understand. Consider using shorter names or following a consistent naming convention.",
+      "urgency": 2,
+      "evidence": "def solve(self, x=0):"
+    },
+    {
+      "file": "demo/queens.py",
+      "category": "maintainability",
+      "issue": "Magic numbers",
+      "details": "The code uses magic numbers like `2*n-1` and `self.n`. Consider defining named constants to make the code more readable.",
+      "urgency": 2,
+      "evidence": "self.up = [0] * (2*n-1)"
+    },
+    {
+      "file": "demo/queens.py",
+      "category": "compatibility_risk",
+      "issue": "Python 3.10+ compatibility risk",
+      "details": "The code uses the `print` function without specifying the `end` parameter, which may cause issues in Python 3.10+. Consider using f-strings or the `print` function with the `end` parameter.",
+      "urgency": 3,
+      "evidence": "print('+-' + '--'*self.n + '+')"
+    },
+    {
+      "file": "demo/queens.py",
+      "category": "maintainability",
+      "issue": "Unclear variable names",
+      "details": "Variable names like `x` and `y` are not very descriptive. Consider using more descriptive names to make the code easier to understand.",
+      "urgency": 2,
+      "evidence": "for y in range(self.n):"
+    },
+    {
+      "file": "demo/redemo.py",
+      "category": "maintainability",
+      "issue": "Long method",
+      "details": "The `__init__` method is too long and complex, it may be beneficial to break it down into smaller methods.",
+      "urgency": 3,
+      "evidence": "The `__init__` method is over 100 lines long and contains multiple complex operations."
+    },
+    {
+      "file": "demo/redemo.py",
+      "category": "compatibility_risk",
+      "issue": "Python 3.10+ compatibility risk",
+      "details": "The code uses the `re` module without specifying a Python version, which may lead to compatibility issues with Python 3.10+.",
+      "urgency": 2,
+      "evidence": "The `re` module is imported without specifying a Python version."
+    },
+    {
+      "file": "demo/redemo.py",
+      "category": "maintainability",
+      "issue": "Magic numbers",
+      "details": "The code uses magic numbers (e.g. 60, 4) without explanation, which may make it harder to understand and maintain.",
+      "urgency": 2,
+      "evidence": "The code contains magic numbers without explanation."
+    },
+    {
+      "file": "demo/redemo.py",
+      "category": "maintainability",
+      "issue": "Long variable names",
+      "details": "Some variable names (e.g. `self.frames`, `self.boxes`, `self.vars`) are too long and may be shortened for better readability.",
+      "urgency": 1,
+      "evidence": "The code contains long variable names."
+    },
+    {
+      "file": "demo/rpython.py",
+      "category": "maintainability",
+      "issue": "Inconsistent indentation",
+      "details": "The code uses both spaces and tabs for indentation, which can lead to issues in Python 3.10+.",
+      "urgency": 3,
+      "evidence": "The code contains both '    ' and '\t' for indentation."
+    },
+    {
+      "file": "demo/rpython.py",
+      "category": "compatibility_risk",
+      "issue": "Use of deprecated socket API",
+      "details": "The code uses the 'SHUT_WR' flag, which is deprecated in Python 3.10+.",
+      "urgency": 4,
+      "evidence": "The code contains 'SHUT_WR' in the socket shutdown call."
+    },
+    {
+      "file": "demo/rpython.py",
+      "category": "compatibility_risk",
+      "issue": "Use of Python 2-style socket import",
+      "details": "The code imports the 'socket' module from the 'socket' package, which is not necessary in Python 3.",
+      "urgency": 3,
+      "evidence": "The code contains 'from socket import socket, AF_INET, SOCK_STREAM, SHUT_WR'."
+    },
+    {
+      "file": "demo/rpython.py",
+      "category": "maintainability",
+      "issue": "Magic numbers",
+      "details": "The code uses magic numbers (e.g., 4127, 1024) without explanation.",
+      "urgency": 2,
+      "evidence": "The code contains 'PORT = 4127' and 'BUFSIZE = 1024'."
     }
-  ]
+  ],
+  "failures": []
 }
