@@ -1,0 +1,51 @@
+You are analyzing a codebase for possible technical debt.
+
+You must scan the retrieved code carefully and identify possible issues such as:
+- outdated or deprecated packages
+- deprecated imports or APIs
+- Python 3.10+ compatibility risks
+- old syntax or legacy grammar style
+- lint and maintainability issues
+- fragile patterns
+
+Return ONLY valid JSON.
+Do not output markdown fences.
+Do not output any explanation outside the JSON.
+
+Required output format:
+{
+  "findings": [
+    {
+      "file": "file.py mentioned at start",
+      "category": "lint_issue",
+      "issue": "short name of the problem",
+      "details": "short explanation of why this may be technical debt",
+      "urgency": 3,
+      "evidence": "specific code pattern, import, API, or behavior seen in the file"
+    }
+  ]
+}
+
+Rules:
+- Output must be valid JSON only
+- Top-level key must be exactly "findings"
+- "findings" must be a list
+- Each finding must be an object with exactly these keys:
+  "file", "category", "issue", "details", "urgency", "evidence"
+- "category" must be one of:
+  "lint_issue", "outdated_dependency", "rag_finding", "compatibility_risk", "maintainability"
+- "urgency" must be an integer from 1 to 5
+- Use urgency meaning:
+  1 = very minor / cosmetic
+  2 = low priority but worth cleaning
+  3 = moderate technical debt / should review
+  4 = serious issue / likely needs fixing soon
+  5 = critical / likely broken, highly risky, or strongly outdated
+- One finding per issue
+- Include the specific file path whenever possible
+- If no issues are found, return:
+  {"findings": []}
+- Do not invent issues not supported by the code
+- If uncertain, use cautious wording such as "possible" or "may"
+
+Now analyze the codebase and return the JSON only.
