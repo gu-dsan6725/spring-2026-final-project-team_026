@@ -16,11 +16,22 @@ import sys
 # Run from agent/ dir; JSON artifacts live one level up
 ROOT = os.path.join(os.path.dirname(__file__), "..")
 
-from executor import Executor
 from evaluator import Evaluator
+from verifier import Verifier
 
 
 def main():
+    try:
+        from executor import Executor
+    except ModuleNotFoundError as e:
+        print("Executor dependencies are not installed in this environment.")
+        print(f"Missing module: {e}")
+        print("\nIf you are using uv, run from repo root:")
+        print("  uv sync")
+        print("\nOr with pip (in your venv):")
+        print("  pip install -e .")
+        raise
+
     plan_path = os.path.join(ROOT, "plan_test.json")
     debt_path = os.path.join(ROOT, "debt_detect_test.json")
     directory_path = os.path.join(ROOT, "old-demos/")
@@ -44,16 +55,32 @@ def main():
         json.dump(execution_results, f, indent=2, ensure_ascii=False)
     print(f"\nExecution results saved to: {exec_out_path}")
 
-    # ── Step 2: Run Evaluator ──────────────────────────────────────────────
+    # ── Step 2: Run Verifier (before/after evidence) ───────────────────────
     print("\n" + "=" * 60)
-    print("STEP 2: Evaluator")
+    print("STEP 2: Verifier")
+    print("=" * 60)
+
+    verifier = Verifier(
+        before_dir=directory_path,
+        after_dir=output_dir,
+    )
+    verification_results = verifier.verify_all(execution_results=execution_results, is_test=True)
+
+    ver_out_path = os.path.join(ROOT, "verification_test.json")
+    with open(ver_out_path, "w", encoding="utf-8") as f:
+        json.dump(verification_results, f, indent=2, ensure_ascii=False)
+    print(f"\nVerification results saved to: {ver_out_path}")
+
+    # ── Step 3: Run Evaluator ──────────────────────────────────────────────
+    print("\n" + "=" * 60)
+    print("STEP 3: Evaluator")
     print("=" * 60)
 
     with open(debt_path, "r", encoding="utf-8") as f:
         debt_findings = json.load(f)
 
     evaluator = Evaluator()
-    metrics = evaluator.compute_metrics(debt_findings, execution_results)
+    metrics = evaluator.compute_metrics(debt_findings, execution_results, verification_results=verification_results)
     report = evaluator.generate_report(metrics)
 
     print("\n" + report)
@@ -64,12 +91,12 @@ def main():
         f.write(report)
     print(f"\nEvaluation report saved to: {report_path}")
 
-    # ── Step 3: Spot-check one modernized file ─────────────────────────────
+    # ── Step 4: Spot-check one modernized file ─────────────────────────────
     succeeded = [e for e in execution_results["executions"] if e["status"] == "succeeded"]
     if succeeded:
         sample = succeeded[0]
         print("\n" + "=" * 60)
-        print(f"STEP 3: Spot-check — {sample['file']}")
+        print(f"STEP 4: Spot-check — {sample['file']}")
         print("=" * 60)
 
         original_path = os.path.join(directory_path, sample["file"])

@@ -2,6 +2,40 @@
 
 This repository contains information about deliverables, project ideas, and all things related to the final project.
 
+## Codapter Working Demo (Local)
+
+This repo contains a multi-agent pipeline (Detector → Planner → Executor → Verifier → Evaluator) that can be demoed locally.
+
+### Quickstart
+
+Prereqs:
+- Python >= 3.10
+- `git`
+- A Groq API key in your environment as `GROQ_API_KEY` (used via LiteLLM)
+
+Install deps (recommended with uv):
+
+```bash
+uv sync
+```
+
+Fetch sample data into `./old-demos/`:
+
+```bash
+chmod +x scripts/fetch_sample_data.sh
+./scripts/fetch_sample_data.sh
+```
+
+Run the end-to-end demo (test mode = small subset of files):
+
+```bash
+python demo.py
+```
+
+Outputs:
+- Modernized files: `old-demos-modernized/`
+- Run artifacts (JSON + report): `artifacts/<timestamp>/eval_report.md`
+
 ## Team 01 Project (Codapter / AI Tech Debt Forge)
 
 Milestone 2 check-in artifacts:

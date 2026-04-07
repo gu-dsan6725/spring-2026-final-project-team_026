@@ -7,6 +7,7 @@ from dotenv import load_dotenv
 
 from langchain_community.chat_models import ChatLiteLLM
 from langchain_community.document_loaders import DirectoryLoader
+from langchain_community.document_loaders import TextLoader
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_community.vectorstores import FAISS
 from langchain_community.embeddings import HuggingFaceEmbeddings
@@ -97,7 +98,15 @@ class DirectoryRAGAgent:
         all_docs = []
 
         for pattern in self.glob_patterns:
-            loader = DirectoryLoader(self.directory_path, glob=pattern)
+            # Use TextLoader to avoid environment-dependent "unstructured" parsing issues
+            # (e.g., libmagic / filetype detection causing UnsupportedFileFormatError).
+            loader = DirectoryLoader(
+                self.directory_path,
+                glob=pattern,
+                loader_cls=TextLoader,
+                loader_kwargs={"encoding": "utf-8"},
+                silent_errors=True,
+            )
             docs = loader.load()
             all_docs.extend(docs)
 
