@@ -1,0 +1,926 @@
+{
+  "findings": [
+    {
+      "file": "OVERALL",
+      "category": "maintainability",
+      "issue": "Use of global variables",
+      "details": "The use of global variables can make the code harder to understand and maintain.",
+      "urgency": 3,
+      "evidence": "global Program"
+    },
+    {
+      "file": "OVERALL",
+      "category": "compatibility_risk",
+      "issue": "Use of Python 2.x syntax",
+      "details": "The code uses Python 2.x syntax, which may not be compatible with Python 3.x.",
+      "urgency": 4,
+      "evidence": "print '-->'"
+    },
+    {
+      "file": "OVERALL",
+      "category": "compatibility_risk",
+      "issue": "Use of regex module",
+      "details": "The regex module is not available in Python 3.x, use re module instead.",
+      "urgency": 4,
+      "evidence": "import regex"
+    },
+    {
+      "file": "OVERALL",
+      "category": "maintainability",
+      "issue": "Use of string module",
+      "details": "The string module is not necessary, use built-in string functions instead.",
+      "urgency": 3,
+      "evidence": "import string"
+    },
+    {
+      "file": "OVERALL",
+      "category": "compatibility_risk",
+      "issue": "Use of os.error",
+      "details": "The os.error exception is not available in Python 3.x, use OSError instead.",
+      "urgency": 4,
+      "evidence": "os.error, msg"
+    },
+    {
+      "file": "OVERALL",
+      "category": "maintainability",
+      "issue": "Use of sys.exit(1)",
+      "details": "The use of sys.exit(1) can make the code harder to understand and maintain.",
+      "urgency": 3,
+      "evidence": "sys.exit(1)"
+    },
+    {
+      "file": "OVERALL",
+      "category": "compatibility_risk",
+      "issue": "Use of sys.argv[1:]",
+      "details": "The use of sys.argv[1:] may not be compatible with Python 3.x.",
+      "urgency": 4,
+      "evidence": "sys.argv[1:]"
+    },
+    {
+      "file": "OVERALL",
+      "category": "maintainability",
+      "issue": "Use of dbg function",
+      "details": "The dbg function is not necessary, use print instead.",
+      "urgency": 3,
+      "evidence": "dbg('recursedown('"
+    },
+    {
+      "file": "OVERALL",
+      "category": "compatibility_risk",
+      "issue": "Use of os.path.islink",
+      "details": "The os.path.islink function may not be compatible with Python 3.x.",
+      "urgency": 4,
+      "evidence": "os.path.islink(fullname)"
+    },
+    {
+      "file": "OVERALL",
+      "category": "maintainability",
+      "issue": "Use of err function",
+      "details": "The err function is not necessary, use print instead.",
+      "urgency": 3,
+      "evidence": "err(dirname + ': cannot list directory: '"
+    },
+    {
+      "file": "OVERALL",
+      "category": "compatibility_risk",
+      "issue": "Use of os.path.isdir",
+      "details": "The os.path.isdir function may not be compatible with Python 3.x.",
+      "urgency": 4,
+      "evidence": "os.path.isdir(fullname)"
+    },
+    {
+      "file": "OVERALL",
+      "category": "maintainability",
+      "issue": "Use of rep function",
+      "details": "The rep function is not necessary, use print instead.",
+      "urgency": 3,
+      "evidence": "rep(sys.stdout.write"
+    },
+    {
+      "file": "beer.py",
+      "category": "compatibility_risk",
+      "issue": "Python 3.10+ compatibility risk",
+      "details": "The code uses Python 2-style print statements, which may not work in Python 3.10+",
+      "urgency": 3,
+      "evidence": "print bottle(n-i), \"on the wall,\""
+    },
+    {
+      "file": "beer.py",
+      "category": "maintainability",
+      "issue": "Magic number",
+      "details": "The number 100 is used directly in the code without explanation",
+      "urgency": 2,
+      "evidence": "n = 100"
+    },
+    {
+      "file": "beer.py",
+      "category": "maintainability",
+      "issue": "Magic number",
+      "details": "The number 1 is used directly in the code without explanation",
+      "urgency": 2,
+      "evidence": "if n == 1: return \"one bottle of beer\""
+    },
+    {
+      "file": "beer.py",
+      "category": "maintainability",
+      "issue": "Magic number",
+      "details": "The number 0 is used directly in the code without explanation",
+      "urgency": 2,
+      "evidence": "if n == 0: return \"no more bottles of beer\""
+    },
+    {
+      "file": "beer.py",
+      "category": "maintainability",
+      "issue": "Hardcoded string",
+      "details": "The string \"one bottle of beer\" is hardcoded without explanation",
+      "urgency": 2,
+      "evidence": "return \"one bottle of beer\""
+    },
+    {
+      "file": "beer.py",
+      "category": "maintainability",
+      "issue": "Hardcoded string",
+      "details": "The string \"no more bottles of beer\" is hardcoded without explanation",
+      "urgency": 2,
+      "evidence": "return \"no more bottles of beer\""
+    },
+    {
+      "file": "beer.py",
+      "category": "maintainability",
+      "issue": "Fragile pattern",
+      "details": "The code assumes that the input is always an integer",
+      "urgency": 3,
+      "evidence": "n = int(sys.argv[1])"
+    },
+    {
+      "file": "findlinksto.py",
+      "category": "compatibility_risk",
+      "issue": "Python 3.10+ compatibility risk",
+      "details": "The code uses the `os.path.walk` function, which is deprecated since Python 3.2 and removed in Python 3.5.",
+      "urgency": 5,
+      "evidence": "os.path.walk(dirname, visit, prog)"
+    },
+    {
+      "file": "findlinksto.py",
+      "category": "maintainability",
+      "issue": "Possible fragile pattern",
+      "details": "The code uses a regular expression to match the link target, but the pattern is not validated or sanitized.",
+      "urgency": 3,
+      "evidence": "prog = regex.compile(pat)"
+    },
+    {
+      "file": "findlinksto.py",
+      "category": "maintainability",
+      "issue": "Possible fragile pattern",
+      "details": "The code uses the `os.readlink` function, which may raise an exception if the link is broken or invalid.",
+      "urgency": 3,
+      "evidence": "linkto = os.readlink(name)"
+    },
+    {
+      "file": "findlinksto.py",
+      "category": "maintainability",
+      "issue": "Possible fragile pattern",
+      "details": "The code uses the `os.path.ismount` function, which may raise an exception if the path is invalid.",
+      "urgency": 3,
+      "evidence": "if os.path.ismount(dirname):"
+    },
+    {
+      "file": "findlinksto.py",
+      "category": "maintainability",
+      "issue": "Possible fragile pattern",
+      "details": "The code uses the `os.path.islink` function, which may raise an exception if the path is invalid.",
+      "urgency": 3,
+      "evidence": "if os.path.islink(dirname):"
+    },
+    {
+      "file": "findlinksto.py",
+      "category": "maintainability",
+      "issue": "Possible fragile pattern",
+      "details": "The code uses the `os.path.join` function, which may raise an exception if the path is invalid.",
+      "urgency": 3,
+      "evidence": "name = os.path.join(dirname, name)"
+    },
+    {
+      "file": "findlinksto.py",
+      "category": "maintainability",
+      "issue": "Possible fragile pattern",
+      "details": "The code uses the `os.path.walk` function, which may raise an exception if the path is invalid.",
+      "urgency": 3,
+      "evidence": "os.path.walk(dirname, visit, prog)"
+    },
+    {
+      "file": "fixcid.py",
+      "category": "maintainability",
+      "issue": "Use of deprecated sys.stderr.write",
+      "details": "sys.stderr.write is deprecated in Python 3, use print instead",
+      "urgency": 3,
+      "evidence": "err = sys.stderr.write"
+    },
+    {
+      "file": "fixcid.py",
+      "category": "maintainability",
+      "issue": "Use of deprecated sys.stdout.write",
+      "details": "sys.stdout.write is deprecated in Python 3, use print instead",
+      "urgency": 3,
+      "evidence": "rep = sys.stdout.write"
+    },
+    {
+      "file": "fixcid.py",
+      "category": "compatibility_risk",
+      "issue": "Use of regex module",
+      "details": "The regex module is not included in the Python standard library, may cause issues on some systems",
+      "urgency": 2,
+      "evidence": "import regex"
+    },
+    {
+      "file": "fixcid.py",
+      "category": "maintainability",
+      "issue": "Use of string module",
+      "details": "The string module is not necessary in Python 3, use the built-in string functions instead",
+      "urgency": 2,
+      "evidence": "import string"
+    },
+    {
+      "file": "fixcid.py",
+      "category": "maintainability",
+      "issue": "Use of os.stat() with ST_MODE",
+      "details": "os.stat() with ST_MODE is not necessary in Python 3, use os.stat.st_mode instead",
+      "urgency": 2,
+      "evidence": "statbuf = os.stat(filename)"
+    },
+    {
+      "file": "fixcid.py",
+      "category": "maintainability",
+      "issue": "Use of os.error exception",
+      "details": "os.error exception is deprecated in Python 3, use OSError instead",
+      "urgency": 2,
+      "evidence": "os.error, msg"
+    },
+    {
+      "file": "fixcid.py",
+      "category": "maintainability",
+      "issue": "Use of IOError exception",
+      "details": "IOError exception is deprecated in Python 3, use OSError instead",
+      "urgency": 2,
+      "evidence": "IOError, msg"
+    },
+    {
+      "file": "fixcid.py",
+      "category": "maintainability",
+      "issue": "Use of sys.argv[0]",
+      "details": "sys.argv[0] is not necessary, use __file__ instead",
+      "urgency": 2,
+      "evidence": "progname = sys.argv[0]"
+    },
+    {
+      "file": "fixcid.py",
+      "category": "maintainability",
+      "issue": "Use of string.index() method",
+      "details": "string.index() method is deprecated in Python 3, use str.index() instead",
+      "urgency": 2,
+      "evidence": "string.index(line, '#')"
+    },
+    {
+      "file": "fixcid.py",
+      "category": "maintainability",
+      "issue": "Use of string.split() method",
+      "details": "string.split() method is deprecated in Python 3, use str.split() instead",
+      "urgency": 2,
+      "evidence": "words = string.split(line[:i])"
+    },
+    {
+      "file": "fixcid.py",
+      "category": "maintainability",
+      "issue": "Use of string.joinfields() method",
+      "details": "string.joinfields() method is deprecated in Python 3, use str.join() instead",
+      "urgency": 2,
+      "evidence": "OutsideCommentPattern = '\\(' + string.joinfields(OutsideComment, '\\|') + '\\)'"
+    },
+    {
+      "file": "fixcid.py",
+      "category": "maintainability",
+      "issue": "Use of regex.compile() method",
+      "details": "regex.compile() method is not necessary, use the regex module's functions instead",
+      "urgency": 2,
+      "evidence": "OutsideCommentProgram = regex.compile(OutsideCommentPattern)"
+    },
+    {
+      "file": "fixcid.py",
+      "category": "maintainability",
+      "issue": "Use of regex.match() method",
+      "details": "regex.match() method is not necessary, use the regex module's functions instead",
+      "urgency": 2,
+      "evidence": "return regex.match(Wanted, name) >= 0"
+    },
+    {
+      "file": "fixcid.py",
+      "category": "maintainability",
+      "issue": "Use of regex.search() method",
+      "details": "regex.search() method is not necessary, use the regex module's functions instead",
+      "urgency": 2,
+      "evidence": "i = Program.search(line, i)"
+    },
+    {
+      "file": "fixcid.py",
+      "category": "maintainability",
+      "issue": "Use of regex.group() method",
+      "details": "regex.group() method is not necessary, use the regex module's functions instead",
+      "urgency": 2,
+      "evidence": "found = Program.group(0)"
+    },
+    {
+      "file": "hanoi.py",
+      "category": "compatibility_risk",
+      "issue": "Python 3.10+ compatibility risk",
+      "details": "The code uses the 'Tkinter' module, which is not compatible with Python 3.10+.",
+      "urgency": 5,
+      "evidence": "from Tkinter import *"
+    },
+    {
+      "file": "hanoi.py",
+      "category": "maintainability",
+      "issue": "Infinite loop in the run method",
+      "details": "The run method contains an infinite loop that will never terminate.",
+      "urgency": 5,
+      "evidence": "while 1:"
+    },
+    {
+      "file": "hanoi.py",
+      "category": "maintainability",
+      "issue": "Lack of error handling in the report method",
+      "details": "The report method does not handle potential errors that may occur during the animation.",
+      "urgency": 3,
+      "evidence": "if self.pegstate[a][-1] != i: raise RuntimeError"
+    },
+    {
+      "file": "hanoi.py",
+      "category": "maintainability",
+      "issue": "Magic numbers in the report method",
+      "details": "The report method uses magic numbers (e.g., 25, 2, 3) that may not be self-explanatory.",
+      "urgency": 2,
+      "evidence": "self.tk.after(25)"
+    },
+    {
+      "file": "ifdef.py",
+      "category": "maintainability",
+      "issue": "Use of deprecated string module",
+      "details": "The string module is deprecated in Python 3.10 and later. Consider using the built-in string functions instead.",
+      "urgency": 3,
+      "evidence": "import string"
+    },
+    {
+      "file": "ifdef.py",
+      "category": "compatibility_risk",
+      "issue": "Use of regex module",
+      "details": "The regex module is not available in Python 3.10 and later. Consider using the built-in re module instead.",
+      "urgency": 4,
+      "evidence": "import regex"
+    },
+    {
+      "file": "ifdef.py",
+      "category": "compatibility_risk",
+      "issue": "Use of getopt module",
+      "details": "The getopt module is not available in Python 3.10 and later. Consider using the argparse module instead.",
+      "urgency": 4,
+      "evidence": "import getopt"
+    },
+    {
+      "file": "ifdef.py",
+      "category": "maintainability",
+      "issue": "Use of sys.stderr.write() for error messages",
+      "details": "Consider using a logging library to handle error messages instead.",
+      "urgency": 2,
+      "evidence": "sys.stderr.write('Unknown keyword %s\\n' % keyword)"
+    },
+    {
+      "file": "lfcr.py",
+      "category": "maintainability",
+      "issue": "Inconsistent encoding",
+      "details": "The code mixes binary and text mode for file operations, which may lead to encoding issues.",
+      "urgency": 3,
+      "evidence": "open(file, \"rb\") and open(file, \"wb\")"
+    },
+    {
+      "file": "lfcr.py",
+      "category": "compatibility_risk",
+      "issue": "Python 2.x compatibility",
+      "details": "The code uses Python 2.x style print statements, which may not work in Python 3.x.",
+      "urgency": 3,
+      "evidence": "print file"
+    },
+    {
+      "file": "lfcr.py",
+      "category": "compatibility_risk",
+      "issue": "Python 3.10+ compatibility",
+      "details": "The code uses the `re.sub` function with a string argument, which may not work in Python 3.10+ due to changes in the `re` module.",
+      "urgency": 3,
+      "evidence": "re.sub(\"\\r?\\n\", \"\\r\\n\", data)"
+    },
+    {
+      "file": "lfcr.py",
+      "category": "maintainability",
+      "issue": "Magic numbers",
+      "details": "The code uses magic numbers (e.g., 1, 2, 3, 4, 5) without explanation, which may make the code harder to understand.",
+      "urgency": 2,
+      "evidence": "urgency values"
+    },
+    {
+      "file": "lfcr.py",
+      "category": "maintainability",
+      "issue": "Lack of error handling",
+      "details": "The code does not handle potential errors that may occur when opening or reading files.",
+      "urgency": 2,
+      "evidence": "open(file, \"rb\") and open(file, \"wb\")"
+    },
+    {
+      "file": "linktree.py",
+      "category": "maintainability",
+      "issue": "Inconsistent indentation",
+      "details": "The code uses both spaces and tabs for indentation, which can lead to issues.",
+      "urgency": 3,
+      "evidence": "The code has lines with 4 spaces and lines with tabs for indentation."
+    },
+    {
+      "file": "linktree.py",
+      "category": "compatibility_risk",
+      "issue": "Use of os.error exception",
+      "details": "The os.error exception is deprecated in Python 3 and may be removed in future versions.",
+      "urgency": 4,
+      "evidence": "The code catches os.error exceptions in several places."
+    },
+    {
+      "file": "linktree.py",
+      "category": "compatibility_risk",
+      "issue": "Use of os.pardir",
+      "details": "The os.pardir constant is deprecated in Python 3 and may be removed in future versions.",
+      "urgency": 4,
+      "evidence": "The code uses os.pardir to get the parent directory."
+    },
+    {
+      "file": "linktree.py",
+      "category": "compatibility_risk",
+      "issue": "Use of sys.exit",
+      "details": "The sys.exit function is not necessary in Python 3 and may be removed in future versions.",
+      "urgency": 3,
+      "evidence": "The code calls sys.exit at the end of the main function."
+    },
+    {
+      "file": "linktree.py",
+      "category": "maintainability",
+      "issue": "Magic numbers",
+      "details": "The code uses magic numbers (e.g., 0777) without explanation.",
+      "urgency": 2,
+      "evidence": "The code uses the number 0777 for permissions."
+    },
+    {
+      "file": "lll.py",
+      "category": "maintainability",
+      "issue": "No error handling for os.readlink()",
+      "details": "os.readlink() may raise an OSError if the link is broken or inaccessible",
+      "urgency": 3,
+      "evidence": "os.readlink(full)"
+    },
+    {
+      "file": "lll.py",
+      "category": "compatibility_risk",
+      "issue": "Python 2.x compatibility",
+      "details": "The code uses Python 2.x specific functions and modules (e.g., os.curdir, os.pardir)",
+      "urgency": 4,
+      "evidence": "os.curdir, os.pardir"
+    },
+    {
+      "file": "lll.py",
+      "category": "compatibility_risk",
+      "issue": "No Python 3.10+ compatibility checks",
+      "details": "The code does not check for Python 3.10+ specific features or changes",
+      "urgency": 3,
+      "evidence": "No explicit compatibility checks"
+    },
+    {
+      "file": "lll.py",
+      "category": "maintainability",
+      "issue": "No docstrings or comments",
+      "details": "The code lacks documentation, making it harder to understand and maintain",
+      "urgency": 2,
+      "evidence": "No docstrings or comments"
+    },
+    {
+      "file": "markov.py",
+      "category": "compatibility_risk",
+      "issue": "Python 3.10+ compatibility risk",
+      "details": "The code uses Python 2.x syntax and may not be compatible with Python 3.10+.",
+      "urgency": 5,
+      "evidence": "The use of `sys.argv[1:]` and `sys.argv` without specifying Python 3.x compatibility."
+    },
+    {
+      "file": "markov.py",
+      "category": "maintainability",
+      "issue": "Complex code structure",
+      "details": "The code has a complex structure with multiple nested functions and conditional statements.",
+      "urgency": 3,
+      "evidence": "The `test` function and the `Markov` class have complex logic and may be difficult to maintain."
+    },
+    {
+      "file": "markov.py",
+      "category": "maintainability",
+      "issue": "Magic numbers",
+      "details": "The code uses magic numbers (e.g., `2`, `72`) without explanation.",
+      "urgency": 2,
+      "evidence": "The use of magic numbers in the `histsize` and `limit` variables."
+    },
+    {
+      "file": "markov.py",
+      "category": "lint_issue",
+      "issue": "Unused import",
+      "details": "The `string` module is imported but not used.",
+      "urgency": 1,
+      "evidence": "The import statement `import string` is not used anywhere in the code."
+    },
+    {
+      "file": "mcast.py",
+      "category": "compatibility_risk",
+      "issue": "Python 3.10+ compatibility risk",
+      "details": "The code uses the `regsub` module, which is not available in Python 3.10+",
+      "urgency": 5,
+      "evidence": "import regsub"
+    },
+    {
+      "file": "mcast.py",
+      "category": "maintainability",
+      "issue": "Possible fragile pattern",
+      "details": "The `openmcastsock` function uses a deprecated import (`string` module) and a deprecated API (`gethostbyname` function)",
+      "urgency": 3,
+      "evidence": "import string\ngethostbyname(group)"
+    },
+    {
+      "file": "mcast.py",
+      "category": "maintainability",
+      "issue": "Possible fragile pattern",
+      "details": "The `openmcastsock` function uses a deprecated API (`htonl` function)",
+      "urgency": 3,
+      "evidence": "struct.pack('ll', htonl(grpaddr), htonl(ifaddr))"
+    },
+    {
+      "file": "mcast.py",
+      "category": "maintainability",
+      "issue": "Possible fragile pattern",
+      "details": "The `openmcastsock` function uses a deprecated API (`IP_ADD_MEMBERSHIP` option)",
+      "urgency": 3,
+      "evidence": "s.setsockopt(IPPROTO_IP, IP_ADD_MEMBERSHIP, mreq)"
+    },
+    {
+      "file": "mcast.py",
+      "category": "maintainability",
+      "issue": "Possible fragile pattern",
+      "details": "The `openmcastsock` function uses a deprecated API (`INADDR_ANY` constant)",
+      "urgency": 3,
+      "evidence": "ifaddr = INADDR_ANY"
+    },
+    {
+      "file": "mcast.py",
+      "category": "maintainability",
+      "issue": "Possible fragile pattern",
+      "details": "The `openmcastsock` function uses a deprecated API (`map` function)",
+      "urgency": 3,
+      "evidence": "map(int, string.split(group, \".\"))"
+    },
+    {
+      "file": "mcast.py",
+      "category": "maintainability",
+      "issue": "Possible fragile pattern",
+      "details": "The `openmcastsock` function uses a deprecated API (`struct.pack` function)",
+      "urgency": 3,
+      "evidence": "struct.pack('ll', htonl(grpaddr), htonl(ifaddr))"
+    },
+    {
+      "file": "pathfix.py",
+      "category": "compatibility_risk",
+      "issue": "Python 3.10+ compatibility risk",
+      "details": "The code uses the `regex` module, which is not compatible with Python 3.10+.",
+      "urgency": 5,
+      "evidence": "import regex"
+    },
+    {
+      "file": "pathfix.py",
+      "category": "maintainability",
+      "issue": "Use of global variables",
+      "details": "The code uses global variables `err`, `dbg`, and `rep`.",
+      "urgency": 3,
+      "evidence": "global err = sys.stderr.write, global dbg = err, global rep = sys.stdout.write"
+    },
+    {
+      "file": "pathfix.py",
+      "category": "maintainability",
+      "issue": "Use of deprecated `stat` module",
+      "details": "The code uses the `stat` module, which is deprecated in Python 3.",
+      "urgency": 3,
+      "evidence": "from stat import *"
+    },
+    {
+      "file": "pathfix.py",
+      "category": "maintainability",
+      "issue": "Use of `os.error` exception",
+      "details": "The code uses the `os.error` exception, which is not recommended in Python 3.",
+      "urgency": 3,
+      "evidence": "except os.error, msg"
+    },
+    {
+      "file": "pathfix.py",
+      "category": "maintainability",
+      "issue": "Use of `string.find` method",
+      "details": "The code uses the `string.find` method, which is not recommended in Python 3.",
+      "urgency": 3,
+      "evidence": "string.find(line, \"python\")"
+    },
+    {
+      "file": "pathfix.py",
+      "category": "maintainability",
+      "issue": "Use of `BUFSIZE` variable",
+      "details": "The code uses a magic number `BUFSIZE`.",
+      "urgency": 2,
+      "evidence": "BUFSIZE = 8*1024"
+    },
+    {
+      "file": "pdeps.py",
+      "category": "maintainability",
+      "issue": "Unused import",
+      "details": "The 'regex' module is imported but not used.",
+      "urgency": 2,
+      "evidence": "import regex"
+    },
+    {
+      "file": "pdeps.py",
+      "category": "compatibility_risk",
+      "issue": "Python 2.x compatibility",
+      "details": "The 'sys.exit' function is used, which may not work as expected in Python 3.x.",
+      "urgency": 3,
+      "evidence": "sys.exit(main())"
+    },
+    {
+      "file": "pdeps.py",
+      "category": "maintainability",
+      "issue": "Magic numbers",
+      "details": "The number 2 is used as a magic number in the 'return' statement.",
+      "urgency": 1,
+      "evidence": "return 2"
+    },
+    {
+      "file": "pdeps.py",
+      "category": "maintainability",
+      "issue": "Unused variable",
+      "details": "The 'change' variable is assigned but not used.",
+      "urgency": 1,
+      "evidence": "change = 1"
+    },
+    {
+      "file": "pdeps.py",
+      "category": "maintainability",
+      "issue": "Long lines",
+      "details": "Some lines in the code are too long and may be difficult to read.",
+      "urgency": 2,
+      "evidence": "lines like '--- Closure of Uses ---'"
+    },
+    {
+      "file": "ptags.py",
+      "category": "maintainability",
+      "issue": "Global variable usage",
+      "details": "Global variables can make code harder to reason about and may lead to unexpected behavior.",
+      "urgency": 3,
+      "evidence": "tags = []"
+    },
+    {
+      "file": "ptags.py",
+      "category": "compatibility_risk",
+      "issue": "Python 2.x compatibility",
+      "details": "The code uses Python 2.x syntax and may not be compatible with Python 3.x.",
+      "urgency": 4,
+      "evidence": "#!/usr/bin/env python"
+    },
+    {
+      "file": "ptags.py",
+      "category": "maintainability",
+      "issue": "Magic numbers",
+      "details": "The code uses magic numbers (e.g., 1) without explanation, making it harder to understand.",
+      "urgency": 2,
+      "evidence": "1"
+    },
+    {
+      "file": "redemo.py",
+      "category": "compatibility_risk",
+      "issue": "Python 3.10+ compatibility risk",
+      "details": "The code uses Tkinter, which is not compatible with Python 3.10+",
+      "urgency": 5,
+      "evidence": "from Tkinter import *"
+    },
+    {
+      "file": "redemo.py",
+      "category": "maintainability",
+      "issue": "Long method",
+      "details": "The recompile method is too long and complex",
+      "urgency": 3,
+      "evidence": "def recompile(self, event=None):"
+    },
+    {
+      "file": "redemo.py",
+      "category": "maintainability",
+      "issue": "Deep nesting",
+      "details": "The recompile method has deep nesting",
+      "urgency": 3,
+      "evidence": "while last <= len(text):"
+    },
+    {
+      "file": "redemo.py",
+      "category": "maintainability",
+      "issue": "Magic numbers",
+      "details": "The code uses magic numbers (e.g. 3, 5)",
+      "urgency": 2,
+      "evidence": "if nmatches == 0:"
+    },
+    {
+      "file": "redemo.py",
+      "category": "maintainability",
+      "issue": "Long variable names",
+      "details": "Some variable names are too long (e.g. self.compiled)",
+      "urgency": 2,
+      "evidence": "self.compiled = re.compile(self.regexdisplay.get(),"
+    },
+    {
+      "file": "redemo.py",
+      "category": "maintainability",
+      "issue": "Unused imports",
+      "details": "The code imports re but does not use it in all methods",
+      "urgency": 2,
+      "evidence": "import re"
+    },
+    {
+      "file": "reindent.py",
+      "category": "maintainability",
+      "issue": "Potential code duplication in Reindenter class",
+      "details": "The Reindenter class has a lot of duplicated code in its methods. This may make it harder to maintain and modify in the future.",
+      "urgency": 3,
+      "evidence": "The Reindenter class has multiple methods with similar logic, such as the `run` and `write` methods."
+    },
+    {
+      "file": "reindent.py",
+      "category": "compatibility_risk",
+      "issue": "Python 2.x compatibility",
+      "details": "The code uses Python 2.x specific features, such as the `print` statement without parentheses. This may cause compatibility issues with Python 3.x.",
+      "urgency": 4,
+      "evidence": "The `errprint` function uses the `print` statement without parentheses."
+    },
+    {
+      "file": "reindent.py",
+      "category": "maintainability",
+      "issue": "Long method in Reindenter class",
+      "details": "The `run` method in the Reindenter class is quite long and complex. This may make it harder to understand and maintain.",
+      "urgency": 3,
+      "evidence": "The `run` method has multiple nested loops and conditional statements."
+    },
+    {
+      "file": "reindent.py",
+      "category": "lint_issue",
+      "issue": "Unused import",
+      "details": "The `sys` module is imported but not used in the code.",
+      "urgency": 1,
+      "evidence": "The `sys` module is imported but not used in the code."
+    },
+    {
+      "file": "rpython.py",
+      "category": "compatibility_risk",
+      "issue": "Python 3.10+ compatibility risk",
+      "details": "The code uses Python 2.x syntax and may not be compatible with Python 3.10+.",
+      "urgency": 5,
+      "evidence": "The use of string module and string.find() method, which are deprecated in Python 3.x."
+    },
+    {
+      "file": "rpython.py",
+      "category": "maintainability",
+      "issue": "Old syntax and legacy grammar style",
+      "details": "The code uses old Python syntax and may be difficult to read and maintain.",
+      "urgency": 3,
+      "evidence": "The use of print statement without parentheses and the use of string module."
+    },
+    {
+      "file": "rpython.py",
+      "category": "maintainability",
+      "issue": "Fragile pattern",
+      "details": "The code uses a fragile pattern by assuming that the host string will always contain a colon and a port number.",
+      "urgency": 3,
+      "evidence": "The use of string.find() method to extract the port number from the host string."
+    },
+    {
+      "file": "rpython.py",
+      "category": "lint_issue",
+      "issue": "Missing docstring",
+      "details": "The code does not have a docstring, which makes it difficult to understand its purpose and usage.",
+      "urgency": 2,
+      "evidence": "The main function does not have a docstring."
+    },
+    {
+      "file": "rpython.py",
+      "category": "lint_issue",
+      "issue": "Missing type hints",
+      "details": "The code does not use type hints, which makes it difficult to understand the types of variables and function parameters.",
+      "urgency": 2,
+      "evidence": "The function parameters and return types are not annotated with type hints."
+    },
+    {
+      "file": "rpythond.py",
+      "category": "compatibility_risk",
+      "issue": "eval() usage",
+      "details": "eval() is a potential security risk and may be removed in future Python versions.",
+      "urgency": 5,
+      "evidence": "eval(sys.argv[1])"
+    },
+    {
+      "file": "rpythond.py",
+      "category": "maintainability",
+      "issue": "magic numbers",
+      "details": "Using magic numbers (e.g., 4127) can make the code harder to understand and maintain.",
+      "urgency": 2,
+      "evidence": "PORT = 4127"
+    },
+    {
+      "file": "rpythond.py",
+      "category": "maintainability",
+      "issue": "magic strings",
+      "details": "Using magic strings (e.g., 'connected by') can make the code harder to understand and maintain.",
+      "urgency": 2,
+      "evidence": "print 'connected by', remotehost, remoteport"
+    },
+    {
+      "file": "rpythond.py",
+      "category": "maintainability",
+      "issue": "tight coupling",
+      "details": "The code is tightly coupled to the socket library, which can make it harder to change or replace.",
+      "urgency": 3,
+      "evidence": "import socket"
+    },
+    {
+      "file": "rpythond.py",
+      "category": "maintainability",
+      "issue": "deep nesting",
+      "details": "The code has deep nesting, which can make it harder to understand and maintain.",
+      "urgency": 3,
+      "evidence": "while 1: while 1:"
+    },
+    {
+      "file": "rpythond.py",
+      "category": "compatibility_risk",
+      "issue": "Python 2.x socket API",
+      "details": "The code uses the Python 2.x socket API, which may not be compatible with Python 3.x.",
+      "urgency": 5,
+      "evidence": "from socket import *"
+    },
+    {
+      "file": "rpythond.py",
+      "category": "compatibility_risk",
+      "issue": "Python 2.x sys API",
+      "details": "The code uses the Python 2.x sys API, which may not be compatible with Python 3.x.",
+      "urgency": 5,
+      "evidence": "import sys"
+    },
+    {
+      "file": "rpythond.py",
+      "category": "compatibility_risk",
+      "issue": "Python 2.x StringIO API",
+      "details": "The code uses the Python 2.x StringIO API, which may not be compatible with Python 3.x.",
+      "urgency": 5,
+      "evidence": "import StringIO"
+    },
+    {
+      "file": "sortvisu.py",
+      "category": "compatibility_risk",
+      "issue": "Python 3.10+ compatibility risk",
+      "details": "The code uses Tkinter, which is not compatible with Python 3.10+",
+      "urgency": 5,
+      "evidence": "from Tkinter import *"
+    },
+    {
+      "file": "sortvisu.py",
+      "category": "maintainability",
+      "issue": "Long method",
+      "details": "The `swapwith` method in `ArrayItem` class is too long and complex",
+      "urgency": 3,
+      "evidence": "def swapwith(self, other):"
+    },
+    {
+      "file": "sortvisu.py",
+      "category": "lint_issue",
+      "issue": "Unused import",
+      "details": "The `Canvas` import is not used",
+      "urgency": 1,
+      "evidence": "from Canvas import Line, Rectangle"
+    }
+  ],
+  "failures": [
+    {
+      "file": "eptags.py",
+      "error": "Failed to parse JSON after retries"
+    },
+    {
+      "file": "fixps.py",
+      "error": "Failed to parse JSON after retries"
+    }
+  ]
+}

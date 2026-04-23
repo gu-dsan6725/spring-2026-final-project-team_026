@@ -1,0 +1,124 @@
+beer.py: pass
+test_command = python test_set/result/beer.py >> test_set/manual_val_space/beer.txt
+
+
+eptags.py: pass
+test_command = python test_set/result/eptags.py test_set/manual_val_space/test.py
+                cat TAGS >> test_set/manual_val_space/eptags.txt
+note: eptags.txt contain correct output after check with ChatGPT on format
+
+
+findlinksto.py: fail
+test_command = python test_set/result/findlinksto.py 2> test_set/manual_val_space/findlinksto.txt
+note: There is a really simple syntax error in code
+
+
+fixcid.py: fail
+test_command = python test_set/result/fixcid.py 2> test_set/manual_val_space/fixcid.txt
+note: Many syntax error
+
+
+fixps.py: pass
+test_command = python test_set/result/fixps.py test_set/manual_val_space/test2.py
+note: change #!/usr/bin/python to #!/usr/bin/env python
+
+
+hanoi.py: fail
+test_command = python test_set/result/hanoi.py
+note: not displaying anything as expected
+
+
+ifdef.py: fail
+test_command = python test_set/result/ifdef.py -DFOO test_set/manual_val_space/ifdef.c
+note: NameError: name 'args' is not defined
+
+
+lfcr.py: fail
+test_command = cat -v test_set/manual_val_space/example_lfcr.txt
+                python test_set/result/lfcr.py test_set/manual_val_space/example_lfcr.txt
+note: before:
+        Hello
+        World
+        Python    
+      after (should be):  
+        Hello^M
+        World^M
+        Python   
+    Error processing test_set/manual_val_space/example_lfcr.txt: a bytes-like object is required, not 'str'
+
+
+linktree.py: pass
+test_command: python test_set/result/linktree.py
+
+
+lll.py: pass
+test_command: touch test_set/manual_val_space/lll.txt
+                ln -s lll.txt test_set/manual_val_space/mylink
+                python test_set/result/lll.py test_set/manual_val_space
+
+
+markov.py: fail
+test_command = python test_set/result/markov.py
+note: raise ArgumentError(action, message % conflict_string)
+        argparse.ArgumentError: argument -h/--history-size: conflicting option string: -h
+
+
+mcast.py: pass
+test_command (open two terminal, one input former command, else input later one) = 
+                python test_set/result/mcast.py
+                python test_set/result/mcast.py -s
+note: print something like  ('192.168.1.156', 64010) : b'1776982663.926201'
+                            ('192.168.1.156', 64010) : b'1776982664.928253'
+                            ('192.168.1.156', 64010) : b'1776982665.929903'
+                            ('192.168.1.156', 64010) : b'1776982666.935248'
+                            ('192.168.1.156', 64010) : b'1776982667.940604'
+                            ('192.168.1.156', 64010) : b'1776982668.94461'
+
+
+pathfix.py: fail
+test_command = python test_set/result/pathfix.py
+note: syntax error directly before even test, also have undefine var
+
+
+pdeps.py: fail
+test_command = python test_set/result/pdeps.py test_set/result/beer.py test_set/result/eptags.py
+note: AttributeError: 'str' object has no attribute 'match'
+
+
+ptags.py: pass?
+test_command = python test_set/result/ptags.py test_set/manual_val_space/test.py
+                cat tags
+note: although generate correct output, have syntax SyntaxWarning /Users/hongchongyuan/Desktop/DSAN_spring_2026/dsan6750/spring-2026-final-project-team_026/test_set/result/ptags.py:49: SyntaxWarning: invalid escape sequence '\('
+  expr = '^[ \t]*(def|class)[ \t]+([a-zA-Z0-9_]+)[ \t]*[:\(]'
+
+
+redemo.py: fail
+test_command = python test_set/result/redemo.py
+note: syntax error
+
+
+reindent.py: fail
+test_command = python test_set/result/reindent.py
+note: SyntaxError: Function parameters cannot be parenthesized
+
+
+rpython.py: pass
+test_command = (simply use llm to compare correct version and fixed version by agent because it need server to test, pass it says)
+
+
+rpythond.py: fail
+test_command(open two terminal and run each) = python test_set/result/rpythond.py
+                python test_set/result/rpython.py 127.0.0.1 "print(2 + 3)"
+note: should be 5, but AttributeError: '_io.TextIOWrapper' object has no attribute 'getvalue'
+
+
+sortvisu.py: fail
+test_command = python test_set/result/sortvisu.py
+note: should have a display window, but fail quitely
+
+
+
+SUMMARY: 8 pass, 12 fail
+        pass rate = 8/20 = 40%
+
+Findings: long code tend to fail for the fixing in most of the times!

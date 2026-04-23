@@ -4,7 +4,6 @@ import sys
 from datetime import datetime
 from pathlib import Path
 
-
 def _ensure_agent_importable(repo_root: Path) -> None:
     agent_dir = repo_root / "agent"
     if str(agent_dir) not in sys.path:
@@ -22,11 +21,11 @@ def main() -> int:
     from verifier import Verifier
     from evaluator import Evaluator
 
-    before_dir = repo_root / "old-demos"
-    after_dir = repo_root / "old-demos-modernized"
+    before_dir = repo_root / "test_set" / "x"
+    after_dir = repo_root / "test_set" / "result"
 
     if not before_dir.exists() or not any(before_dir.rglob("*")):
-        print("ERROR: ./old-demos is missing or empty.")
+        print("ERROR: ./test_set/x is missing or empty.")
         print("Run: ./scripts/fetch_sample_data.sh")
         return 1
 
@@ -46,7 +45,7 @@ def main() -> int:
     print("STEP 1: Debt Detector")
     print("=" * 60)
     detector = Debt_Detector(directory_path=str(before_dir))
-    debt_findings = detector.debt_search(is_test=True)
+    debt_findings = detector.debt_search(is_test=False)
     debt_path = artifacts_dir / "debt_findings.json"
     debt_path.write_text(json.dumps(debt_findings, indent=2, ensure_ascii=False), encoding="utf-8")
     print(f"Saved: {debt_path}")
@@ -55,7 +54,7 @@ def main() -> int:
     print("STEP 2: Planner")
     print("=" * 60)
     planner = Planner(directory_path=str(before_dir), tech_debt_detected=str(debt_path))
-    plan = planner.plan_all(is_test=True)
+    plan = planner.plan_all(is_test=False)
     plan_path = artifacts_dir / "plan.json"
     plan_path.write_text(json.dumps(plan, indent=2, ensure_ascii=False), encoding="utf-8")
     print(f"Saved: {plan_path}")
@@ -64,7 +63,7 @@ def main() -> int:
     print("STEP 3: Executor")
     print("=" * 60)
     executor = Executor(directory_path=str(before_dir), output_dir=str(after_dir), plan_json_path=str(plan_path))
-    execution_results = executor.execute_all(is_test=True)
+    execution_results = executor.execute_all(is_test=False)
     exec_path = artifacts_dir / "execution.json"
     exec_path.write_text(json.dumps(execution_results, indent=2, ensure_ascii=False), encoding="utf-8")
     print(f"Saved: {exec_path}")
@@ -73,7 +72,7 @@ def main() -> int:
     print("STEP 4: Verifier")
     print("=" * 60)
     verifier = Verifier(before_dir=str(before_dir), after_dir=str(after_dir))
-    verification_results = verifier.verify_all(execution_results=execution_results, is_test=True)
+    verification_results = verifier.verify_all(execution_results=execution_results, is_test=False)
     ver_path = artifacts_dir / "verification.json"
     ver_path.write_text(json.dumps(verification_results, indent=2, ensure_ascii=False), encoding="utf-8")
     print(f"Saved: {ver_path}")

@@ -1,0 +1,4 @@
+
+test_set/manual_val_space/test.py,30
+def hello(2,10
+class A:5,33

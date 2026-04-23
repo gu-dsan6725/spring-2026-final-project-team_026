@@ -1,0 +1,6 @@
+/Users/hongchongyuan/Desktop/DSAN_spring_2026/dsan6750/spring-2026-final-project-team_026/test_set/result/fixcid.py:92: SyntaxWarning: invalid escape sequence '\.'
+  Wanted = '^[a-zA-Z0-9_]+\.[ch]$'
+  File "/Users/hongchongyuan/Desktop/DSAN_spring_2026/dsan6750/spring-2026-final-project-team_026/test_set/result/fixcid.py", line 178
+    os.chmod(tempname, statbuf.st_mode & 07777)
+                                         ^
+SyntaxError: leading zeros in decimal integer literals are not permitted; use an 0o prefix for octal integers

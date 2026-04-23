@@ -1,0 +1,31 @@
+{
+  "debt_analysis": {
+    "files_with_debt": 18,
+    "total_findings": 102,
+    "high_urgency_findings": 20,
+    "urgency_distribution": {
+      "1": 5,
+      "2": 36,
+      "3": 41,
+      "4": 7,
+      "5": 13
+    },
+    "top_categories": {
+      "maintainability": 71,
+      "compatibility_risk": 26,
+      "lint_issue": 5
+    }
+  },
+  "execution": {
+    "files_executed": 20,
+    "files_succeeded": 20,
+    "files_failed": 0,
+    "files_skipped": 0,
+    "execution_success_rate": 1.0,
+    "debt_coverage_rate": 1.0
+  },
+  "verification": {
+    "syntax_pass_rate": 0.2,
+    "total_flake8_improvement": 18
+  }
+}

@@ -1,0 +1,801 @@
+{
+  "verifications": [
+    {
+      "file": "beer.py",
+      "status": "checked",
+      "before": {
+        "path": "/Users/hongchongyuan/Desktop/DSAN_spring_2026/dsan6750/spring-2026-final-project-team_026/test_set/x/beer.py",
+        "syntax_ok": false,
+        "syntax_error": "  File \"/Users/hongchongyuan/Desktop/DSAN_spring_2026/dsan6750/spring-2026-final-project-team_026/test_set/x/beer.py\", line 11\n    print bottle(n-i), \"on the wall,\"\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nSyntaxError: Missing parentheses in call to 'print'. Did you mean print(...)?\n",
+        "lint": {
+          "ok": true,
+          "issues_count": 1,
+          "issues_by_symbol": {
+            "syntax-error": 1
+          },
+          "error": null
+        }
+      },
+      "after": {
+        "path": "/Users/hongchongyuan/Desktop/DSAN_spring_2026/dsan6750/spring-2026-final-project-team_026/test_set/result/beer.py",
+        "syntax_ok": true,
+        "syntax_error": null,
+        "lint": {
+          "ok": true,
+          "issues_count": 2,
+          "issues_by_symbol": {
+            "missing-final-newline": 1,
+            "missing-module-docstring": 1
+          },
+          "error": null
+        }
+      },
+      "improvement": {
+        "lint_issue_reduction": -1
+      }
+    },
+    {
+      "file": "eptags.py",
+      "status": "checked",
+      "before": {
+        "path": "/Users/hongchongyuan/Desktop/DSAN_spring_2026/dsan6750/spring-2026-final-project-team_026/test_set/x/eptags.py",
+        "syntax_ok": true,
+        "syntax_error": null,
+        "lint": {
+          "ok": true,
+          "issues_count": 11,
+          "issues_by_symbol": {
+            "consider-using-f-string": 3,
+            "consider-using-with": 2,
+            "unspecified-encoding": 2,
+            "bare-except": 1,
+            "invalid-name": 1,
+            "missing-function-docstring": 1,
+            "multiple-imports": 1
+          },
+          "error": null
+        }
+      },
+      "after": {
+        "path": "/Users/hongchongyuan/Desktop/DSAN_spring_2026/dsan6750/spring-2026-final-project-team_026/test_set/result/eptags.py",
+        "syntax_ok": true,
+        "syntax_error": null,
+        "lint": {
+          "ok": true,
+          "issues_count": 8,
+          "issues_by_symbol": {
+            "consider-using-f-string": 2,
+            "unspecified-encoding": 2,
+            "consider-using-with": 1,
+            "invalid-name": 1,
+            "missing-final-newline": 1,
+            "missing-function-docstring": 1
+          },
+          "error": null
+        }
+      },
+      "improvement": {
+        "lint_issue_reduction": 3
+      }
+    },
+    {
+      "file": "findlinksto.py",
+      "status": "checked",
+      "before": {
+        "path": "/Users/hongchongyuan/Desktop/DSAN_spring_2026/dsan6750/spring-2026-final-project-team_026/test_set/x/findlinksto.py",
+        "syntax_ok": false,
+        "syntax_error": "  File \"/Users/hongchongyuan/Desktop/DSAN_spring_2026/dsan6750/spring-2026-final-project-team_026/test_set/x/findlinksto.py\", line 16\n    \t\t\traise getopt.error, 'not enough arguments'\n    \t\t\t                  ^\nSyntaxError: invalid syntax\n",
+        "lint": {
+          "ok": true,
+          "issues_count": 1,
+          "issues_by_symbol": {
+            "syntax-error": 1
+          },
+          "error": null
+        }
+      },
+      "after": {
+        "path": "/Users/hongchongyuan/Desktop/DSAN_spring_2026/dsan6750/spring-2026-final-project-team_026/test_set/result/findlinksto.py",
+        "syntax_ok": false,
+        "syntax_error": "  File \"/Users/hongchongyuan/Desktop/DSAN_spring_2026/dsan6750/spring-2026-final-project-team_026/test_set/result/findlinksto.py\", line 16\n    \t\t\traise getopt.error, 'not enough arguments'\n    \t\t\t                  ^\nSyntaxError: invalid syntax\n",
+        "lint": {
+          "ok": true,
+          "issues_count": 1,
+          "issues_by_symbol": {
+            "syntax-error": 1
+          },
+          "error": null
+        }
+      },
+      "improvement": {
+        "lint_issue_reduction": 0
+      }
+    },
+    {
+      "file": "fixcid.py",
+      "status": "checked",
+      "before": {
+        "path": "/Users/hongchongyuan/Desktop/DSAN_spring_2026/dsan6750/spring-2026-final-project-team_026/test_set/x/fixcid.py",
+        "syntax_ok": false,
+        "syntax_error": "  File \"/Users/hongchongyuan/Desktop/DSAN_spring_2026/dsan6750/spring-2026-final-project-team_026/test_set/x/fixcid.py\", line 178\n    \t\tos.chmod(tempname, statbuf[ST_MODE] & 07777)\n    \t\t                                      ^\nSyntaxError: leading zeros in decimal integer literals are not permitted; use an 0o prefix for octal integers\n",
+        "lint": {
+          "ok": true,
+          "issues_count": 1,
+          "issues_by_symbol": {
+            "syntax-error": 1
+          },
+          "error": null
+        }
+      },
+      "after": {
+        "path": "/Users/hongchongyuan/Desktop/DSAN_spring_2026/dsan6750/spring-2026-final-project-team_026/test_set/result/fixcid.py",
+        "syntax_ok": false,
+        "syntax_error": "  File \"/Users/hongchongyuan/Desktop/DSAN_spring_2026/dsan6750/spring-2026-final-project-team_026/test_set/result/fixcid.py\", line 178\n    \t\tos.chmod(tempname, statbuf.st_mode & 07777)\n    \t\t                                     ^\nSyntaxError: leading zeros in decimal integer literals are not permitted; use an 0o prefix for octal integers\n",
+        "lint": {
+          "ok": true,
+          "issues_count": 1,
+          "issues_by_symbol": {
+            "syntax-error": 1
+          },
+          "error": null
+        }
+      },
+      "improvement": {
+        "lint_issue_reduction": 0
+      }
+    },
+    {
+      "file": "fixps.py",
+      "status": "checked",
+      "before": {
+        "path": "/Users/hongchongyuan/Desktop/DSAN_spring_2026/dsan6750/spring-2026-final-project-team_026/test_set/x/fixps.py",
+        "syntax_ok": false,
+        "syntax_error": "  File \"/Users/hongchongyuan/Desktop/DSAN_spring_2026/dsan6750/spring-2026-final-project-team_026/test_set/x/fixps.py\", line 14\n    \t\texcept IOError, msg:\n    \t\t       ^^^^^^^^^^^^\nSyntaxError: multiple exception types must be parenthesized\n",
+        "lint": {
+          "ok": true,
+          "issues_count": 1,
+          "issues_by_symbol": {
+            "syntax-error": 1
+          },
+          "error": null
+        }
+      },
+      "after": {
+        "path": "/Users/hongchongyuan/Desktop/DSAN_spring_2026/dsan6750/spring-2026-final-project-team_026/test_set/result/fixps.py",
+        "syntax_ok": true,
+        "syntax_error": null,
+        "lint": {
+          "ok": true,
+          "issues_count": 8,
+          "issues_by_symbol": {
+            "unspecified-encoding": 2,
+            "unused-import": 2,
+            "line-too-long": 1,
+            "missing-final-newline": 1,
+            "missing-function-docstring": 1,
+            "missing-module-docstring": 1
+          },
+          "error": null
+        }
+      },
+      "improvement": {
+        "lint_issue_reduction": -7
+      }
+    },
+    {
+      "file": "hanoi.py",
+      "status": "checked",
+      "before": {
+        "path": "/Users/hongchongyuan/Desktop/DSAN_spring_2026/dsan6750/spring-2026-final-project-team_026/test_set/x/hanoi.py",
+        "syntax_ok": true,
+        "syntax_error": null,
+        "lint": {
+          "ok": true,
+          "issues_count": 118,
+          "issues_by_symbol": {
+            "bad-indentation": 93,
+            "multiple-statements": 7,
+            "missing-function-docstring": 4,
+            "unused-variable": 4,
+            "too-many-locals": 2,
+            "import-outside-toplevel": 1,
+            "missing-class-docstring": 1,
+            "missing-module-docstring": 1,
+            "multiple-imports": 1,
+            "no-member": 1,
+            "redefined-outer-name": 1,
+            "unused-wildcard-import": 1,
+            "wildcard-import": 1
+          },
+          "error": null
+        }
+      },
+      "after": {
+        "path": "/Users/hongchongyuan/Desktop/DSAN_spring_2026/dsan6750/spring-2026-final-project-team_026/test_set/result/hanoi.py",
+        "syntax_ok": true,
+        "syntax_error": null,
+        "lint": {
+          "ok": true,
+          "issues_count": 29,
+          "issues_by_symbol": {
+            "multiple-statements": 7,
+            "missing-function-docstring": 4,
+            "unused-variable": 4,
+            "redefined-outer-name": 2,
+            "reimported": 2,
+            "too-many-locals": 2,
+            "unused-import": 2,
+            "import-outside-toplevel": 1,
+            "missing-class-docstring": 1,
+            "missing-final-newline": 1,
+            "missing-module-docstring": 1,
+            "multiple-imports": 1,
+            "no-member": 1
+          },
+          "error": null
+        }
+      },
+      "improvement": {
+        "lint_issue_reduction": 89
+      }
+    },
+    {
+      "file": "ifdef.py",
+      "status": "checked",
+      "before": {
+        "path": "/Users/hongchongyuan/Desktop/DSAN_spring_2026/dsan6750/spring-2026-final-project-team_026/test_set/x/ifdef.py",
+        "syntax_ok": true,
+        "syntax_error": null,
+        "lint": {
+          "ok": true,
+          "issues_count": 99,
+          "issues_by_symbol": {
+            "bad-indentation": 72,
+            "multiple-statements": 11,
+            "no-member": 3,
+            "consider-using-f-string": 2,
+            "missing-function-docstring": 2,
+            "wrong-import-order": 2,
+            "consider-using-with": 1,
+            "missing-module-docstring": 1,
+            "too-many-branches": 1,
+            "too-many-statements": 1,
+            "trailing-whitespace": 1,
+            "unspecified-encoding": 1,
+            "unused-import": 1
+          },
+          "error": null
+        }
+      },
+      "after": {
+        "path": "/Users/hongchongyuan/Desktop/DSAN_spring_2026/dsan6750/spring-2026-final-project-team_026/test_set/result/ifdef.py",
+        "syntax_ok": true,
+        "syntax_error": null,
+        "lint": {
+          "ok": true,
+          "issues_count": 23,
+          "issues_by_symbol": {
+            "multiple-statements": 11,
+            "missing-function-docstring": 2,
+            "undefined-variable": 2,
+            "line-too-long": 1,
+            "missing-final-newline": 1,
+            "missing-module-docstring": 1,
+            "too-many-branches": 1,
+            "too-many-statements": 1,
+            "trailing-whitespace": 1,
+            "unspecified-encoding": 1,
+            "unused-import": 1
+          },
+          "error": null
+        }
+      },
+      "improvement": {
+        "lint_issue_reduction": 76
+      }
+    },
+    {
+      "file": "lfcr.py",
+      "status": "checked",
+      "before": {
+        "path": "/Users/hongchongyuan/Desktop/DSAN_spring_2026/dsan6750/spring-2026-final-project-team_026/test_set/x/lfcr.py",
+        "syntax_ok": false,
+        "syntax_error": "  File \"/Users/hongchongyuan/Desktop/DSAN_spring_2026/dsan6750/spring-2026-final-project-team_026/test_set/x/lfcr.py\", line 8\n    print file, \"Directory!\"\n    ^^^^^^^^^^^^^^^^^^^^^^^^\nSyntaxError: Missing parentheses in call to 'print'. Did you mean print(...)?\n",
+        "lint": {
+          "ok": true,
+          "issues_count": 1,
+          "issues_by_symbol": {
+            "syntax-error": 1
+          },
+          "error": null
+        }
+      },
+      "after": {
+        "path": "/Users/hongchongyuan/Desktop/DSAN_spring_2026/dsan6750/spring-2026-final-project-team_026/test_set/result/lfcr.py",
+        "syntax_ok": true,
+        "syntax_error": null,
+        "lint": {
+          "ok": true,
+          "issues_count": 3,
+          "issues_by_symbol": {
+            "broad-exception-caught": 1,
+            "missing-final-newline": 1,
+            "missing-function-docstring": 1
+          },
+          "error": null
+        }
+      },
+      "improvement": {
+        "lint_issue_reduction": -2
+      }
+    },
+    {
+      "file": "linktree.py",
+      "status": "checked",
+      "before": {
+        "path": "/Users/hongchongyuan/Desktop/DSAN_spring_2026/dsan6750/spring-2026-final-project-team_026/test_set/x/linktree.py",
+        "syntax_ok": false,
+        "syntax_error": "  File \"/Users/hongchongyuan/Desktop/DSAN_spring_2026/dsan6750/spring-2026-final-project-team_026/test_set/x/linktree.py\", line 34\n    \t\tos.mkdir(newtree, 0777)\n    \t\t                  ^\nSyntaxError: leading zeros in decimal integer literals are not permitted; use an 0o prefix for octal integers\n",
+        "lint": {
+          "ok": true,
+          "issues_count": 1,
+          "issues_by_symbol": {
+            "syntax-error": 1
+          },
+          "error": null
+        }
+      },
+      "after": {
+        "path": "/Users/hongchongyuan/Desktop/DSAN_spring_2026/dsan6750/spring-2026-final-project-team_026/test_set/result/linktree.py",
+        "syntax_ok": true,
+        "syntax_error": null,
+        "lint": {
+          "ok": true,
+          "issues_count": 8,
+          "issues_by_symbol": {
+            "missing-function-docstring": 2,
+            "multiple-statements": 2,
+            "invalid-name": 1,
+            "missing-final-newline": 1,
+            "missing-module-docstring": 1,
+            "no-else-return": 1
+          },
+          "error": null
+        }
+      },
+      "improvement": {
+        "lint_issue_reduction": -7
+      }
+    },
+    {
+      "file": "lll.py",
+      "status": "checked",
+      "before": {
+        "path": "/Users/hongchongyuan/Desktop/DSAN_spring_2026/dsan6750/spring-2026-final-project-team_026/test_set/x/lll.py",
+        "syntax_ok": false,
+        "syntax_error": "  File \"/Users/hongchongyuan/Desktop/DSAN_spring_2026/dsan6750/spring-2026-final-project-team_026/test_set/x/lll.py\", line 15\n    \t\t\t\tprint name, '->', os.readlink(full)\n    \t\t\t\t^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nSyntaxError: Missing parentheses in call to 'print'. Did you mean print(...)?\n",
+        "lint": {
+          "ok": true,
+          "issues_count": 1,
+          "issues_by_symbol": {
+            "syntax-error": 1
+          },
+          "error": null
+        }
+      },
+      "after": {
+        "path": "/Users/hongchongyuan/Desktop/DSAN_spring_2026/dsan6750/spring-2026-final-project-team_026/test_set/result/lll.py",
+        "syntax_ok": true,
+        "syntax_error": null,
+        "lint": {
+          "ok": true,
+          "issues_count": 4,
+          "issues_by_symbol": {
+            "invalid-name": 2,
+            "missing-final-newline": 1,
+            "missing-module-docstring": 1
+          },
+          "error": null
+        }
+      },
+      "improvement": {
+        "lint_issue_reduction": -3
+      }
+    },
+    {
+      "file": "markov.py",
+      "status": "checked",
+      "before": {
+        "path": "/Users/hongchongyuan/Desktop/DSAN_spring_2026/dsan6750/spring-2026-final-project-team_026/test_set/x/markov.py",
+        "syntax_ok": false,
+        "syntax_error": "  File \"/Users/hongchongyuan/Desktop/DSAN_spring_2026/dsan6750/spring-2026-final-project-team_026/test_set/x/markov.py\", line 39\n    \t\tprint 'Usage: markov [-#] [-cddqw] [file] ...'\n    \t\t^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nSyntaxError: Missing parentheses in call to 'print'. Did you mean print(...)?\n",
+        "lint": {
+          "ok": true,
+          "issues_count": 1,
+          "issues_by_symbol": {
+            "syntax-error": 1
+          },
+          "error": null
+        }
+      },
+      "after": {
+        "path": "/Users/hongchongyuan/Desktop/DSAN_spring_2026/dsan6750/spring-2026-final-project-team_026/test_set/result/markov.py",
+        "syntax_ok": true,
+        "syntax_error": null,
+        "lint": {
+          "ok": true,
+          "issues_count": 12,
+          "issues_by_symbol": {
+            "missing-function-docstring": 6,
+            "broad-exception-caught": 1,
+            "missing-class-docstring": 1,
+            "missing-final-newline": 1,
+            "missing-module-docstring": 1,
+            "unspecified-encoding": 1,
+            "unused-import": 1
+          },
+          "error": null
+        }
+      },
+      "improvement": {
+        "lint_issue_reduction": -11
+      }
+    },
+    {
+      "file": "mcast.py",
+      "status": "checked",
+      "before": {
+        "path": "/Users/hongchongyuan/Desktop/DSAN_spring_2026/dsan6750/spring-2026-final-project-team_026/test_set/x/mcast.py",
+        "syntax_ok": false,
+        "syntax_error": "  File \"/Users/hongchongyuan/Desktop/DSAN_spring_2026/dsan6750/spring-2026-final-project-team_026/test_set/x/mcast.py\", line 41\n    \t\tdata = `time.time()`\n    \t\t       ^\nSyntaxError: invalid syntax\n",
+        "lint": {
+          "ok": true,
+          "issues_count": 1,
+          "issues_by_symbol": {
+            "syntax-error": 1
+          },
+          "error": null
+        }
+      },
+      "after": {
+        "path": "/Users/hongchongyuan/Desktop/DSAN_spring_2026/dsan6750/spring-2026-final-project-team_026/test_set/result/mcast.py",
+        "syntax_ok": true,
+        "syntax_error": null,
+        "lint": {
+          "ok": true,
+          "issues_count": 16,
+          "issues_by_symbol": {
+            "wrong-import-position": 5,
+            "missing-function-docstring": 4,
+            "multiple-statements": 2,
+            "missing-final-newline": 1,
+            "missing-module-docstring": 1,
+            "redefined-builtin": 1,
+            "redefined-outer-name": 1,
+            "unused-import": 1
+          },
+          "error": null
+        }
+      },
+      "improvement": {
+        "lint_issue_reduction": -15
+      }
+    },
+    {
+      "file": "pathfix.py",
+      "status": "checked",
+      "before": {
+        "path": "/Users/hongchongyuan/Desktop/DSAN_spring_2026/dsan6750/spring-2026-final-project-team_026/test_set/x/pathfix.py",
+        "syntax_ok": false,
+        "syntax_error": "  File \"/Users/hongchongyuan/Desktop/DSAN_spring_2026/dsan6750/spring-2026-final-project-team_026/test_set/x/pathfix.py\", line 125\n    \t\tos.chmod(tempname, statbuf[ST_MODE] & 07777)\n    \t\t                                      ^\nSyntaxError: leading zeros in decimal integer literals are not permitted; use an 0o prefix for octal integers\n",
+        "lint": {
+          "ok": true,
+          "issues_count": 1,
+          "issues_by_symbol": {
+            "syntax-error": 1
+          },
+          "error": null
+        }
+      },
+      "after": {
+        "path": "/Users/hongchongyuan/Desktop/DSAN_spring_2026/dsan6750/spring-2026-final-project-team_026/test_set/result/pathfix.py",
+        "syntax_ok": false,
+        "syntax_error": "  File \"/Users/hongchongyuan/Desktop/DSAN_spring_2026/dsan6750/spring-2026-final-project-team_026/test_set/result/pathfix.py\", line 115\n    os.chmod(tempname, statbuf.st_mode & 07777)\n                                         ^\nSyntaxError: leading zeros in decimal integer literals are not permitted; use an 0o prefix for octal integers\n",
+        "lint": {
+          "ok": true,
+          "issues_count": 1,
+          "issues_by_symbol": {
+            "syntax-error": 1
+          },
+          "error": null
+        }
+      },
+      "improvement": {
+        "lint_issue_reduction": 0
+      }
+    },
+    {
+      "file": "pdeps.py",
+      "status": "checked",
+      "before": {
+        "path": "/Users/hongchongyuan/Desktop/DSAN_spring_2026/dsan6750/spring-2026-final-project-team_026/test_set/x/pdeps.py",
+        "syntax_ok": false,
+        "syntax_error": "  File \"/Users/hongchongyuan/Desktop/DSAN_spring_2026/dsan6750/spring-2026-final-project-team_026/test_set/x/pdeps.py\", line 34\n    \t\tprint 'usage: pdeps file.py file.py ...'\n    \t\t^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nSyntaxError: Missing parentheses in call to 'print'. Did you mean print(...)?\n",
+        "lint": {
+          "ok": true,
+          "issues_count": 1,
+          "issues_by_symbol": {
+            "syntax-error": 1
+          },
+          "error": null
+        }
+      },
+      "after": {
+        "path": "/Users/hongchongyuan/Desktop/DSAN_spring_2026/dsan6750/spring-2026-final-project-team_026/test_set/result/pdeps.py",
+        "syntax_ok": true,
+        "syntax_error": null,
+        "lint": {
+          "ok": true,
+          "issues_count": 22,
+          "issues_by_symbol": {
+            "missing-function-docstring": 6,
+            "no-member": 6,
+            "invalid-name": 2,
+            "redefined-builtin": 2,
+            "unused-variable": 2,
+            "consider-using-with": 1,
+            "missing-final-newline": 1,
+            "missing-module-docstring": 1,
+            "unspecified-encoding": 1
+          },
+          "error": null
+        }
+      },
+      "improvement": {
+        "lint_issue_reduction": -21
+      }
+    },
+    {
+      "file": "ptags.py",
+      "status": "checked",
+      "before": {
+        "path": "/Users/hongchongyuan/Desktop/DSAN_spring_2026/dsan6750/spring-2026-final-project-team_026/test_set/x/ptags.py",
+        "syntax_ok": true,
+        "syntax_error": null,
+        "lint": {
+          "ok": true,
+          "issues_count": 15,
+          "issues_by_symbol": {
+            "consider-using-with": 2,
+            "missing-function-docstring": 2,
+            "multiple-statements": 2,
+            "unspecified-encoding": 2,
+            "anomalous-backslash-in-string": 1,
+            "bare-except": 1,
+            "consider-using-f-string": 1,
+            "invalid-name": 1,
+            "missing-module-docstring": 1,
+            "multiple-imports": 1,
+            "trailing-whitespace": 1
+          },
+          "error": null
+        }
+      },
+      "after": {
+        "path": "/Users/hongchongyuan/Desktop/DSAN_spring_2026/dsan6750/spring-2026-final-project-team_026/test_set/result/ptags.py",
+        "syntax_ok": true,
+        "syntax_error": null,
+        "lint": {
+          "ok": true,
+          "issues_count": 9,
+          "issues_by_symbol": {
+            "missing-function-docstring": 2,
+            "unspecified-encoding": 2,
+            "anomalous-backslash-in-string": 1,
+            "broad-exception-caught": 1,
+            "invalid-name": 1,
+            "missing-final-newline": 1,
+            "missing-module-docstring": 1
+          },
+          "error": null
+        }
+      },
+      "improvement": {
+        "lint_issue_reduction": 6
+      }
+    },
+    {
+      "file": "redemo.py",
+      "status": "checked",
+      "before": {
+        "path": "/Users/hongchongyuan/Desktop/DSAN_spring_2026/dsan6750/spring-2026-final-project-team_026/test_set/x/redemo.py",
+        "syntax_ok": false,
+        "syntax_error": "  File \"/Users/hongchongyuan/Desktop/DSAN_spring_2026/dsan6750/spring-2026-final-project-team_026/test_set/x/redemo.py\", line 107\n    \t\texcept re.error, msg:\n    \t\t       ^^^^^^^^^^^^^\nSyntaxError: multiple exception types must be parenthesized\n",
+        "lint": {
+          "ok": true,
+          "issues_count": 1,
+          "issues_by_symbol": {
+            "syntax-error": 1
+          },
+          "error": null
+        }
+      },
+      "after": {
+        "path": "/Users/hongchongyuan/Desktop/DSAN_spring_2026/dsan6750/spring-2026-final-project-team_026/test_set/result/redemo.py",
+        "syntax_ok": false,
+        "syntax_error": "  File \"/Users/hongchongyuan/Desktop/DSAN_spring_2026/dsan6750/spring-2026-final-project-team_026/test_set/result/redemo.py\", line 124\n    g = \"%2d: %s\" % (i, `groups[i]`)\n                        ^\nSyntaxError: invalid syntax\n",
+        "lint": {
+          "ok": true,
+          "issues_count": 1,
+          "issues_by_symbol": {
+            "syntax-error": 1
+          },
+          "error": null
+        }
+      },
+      "improvement": {
+        "lint_issue_reduction": 0
+      }
+    },
+    {
+      "file": "reindent.py",
+      "status": "checked",
+      "before": {
+        "path": "/Users/hongchongyuan/Desktop/DSAN_spring_2026/dsan6750/spring-2026-final-project-team_026/test_set/x/reindent.py",
+        "syntax_ok": false,
+        "syntax_error": "  File \"/Users/hongchongyuan/Desktop/DSAN_spring_2026/dsan6750/spring-2026-final-project-team_026/test_set/x/reindent.py\", line 51\n    except getopt.error, msg:\n           ^^^^^^^^^^^^^^^^^\nSyntaxError: multiple exception types must be parenthesized\n",
+        "lint": {
+          "ok": true,
+          "issues_count": 1,
+          "issues_by_symbol": {
+            "syntax-error": 1
+          },
+          "error": null
+        }
+      },
+      "after": {
+        "path": "/Users/hongchongyuan/Desktop/DSAN_spring_2026/dsan6750/spring-2026-final-project-team_026/test_set/result/reindent.py",
+        "syntax_ok": false,
+        "syntax_error": "  File \"/Users/hongchongyuan/Desktop/DSAN_spring_2026/dsan6750/spring-2026-final-project-team_026/test_set/result/reindent.py\", line 212\n    def token_eater(self, type, token, (sline, scol), end, line,\n                                       ^^^^^^^^^^^^^\nSyntaxError: Function parameters cannot be parenthesized\n",
+        "lint": {
+          "ok": true,
+          "issues_count": 1,
+          "issues_by_symbol": {
+            "syntax-error": 1
+          },
+          "error": null
+        }
+      },
+      "improvement": {
+        "lint_issue_reduction": 0
+      }
+    },
+    {
+      "file": "rpython.py",
+      "status": "checked",
+      "before": {
+        "path": "/Users/hongchongyuan/Desktop/DSAN_spring_2026/dsan6750/spring-2026-final-project-team_026/test_set/x/rpython.py",
+        "syntax_ok": false,
+        "syntax_error": "  File \"/Users/hongchongyuan/Desktop/DSAN_spring_2026/dsan6750/spring-2026-final-project-team_026/test_set/x/rpython.py\", line 15\n    \t\tprint \"usage: rpython host command\"\n    \t\t^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nSyntaxError: Missing parentheses in call to 'print'. Did you mean print(...)?\n",
+        "lint": {
+          "ok": true,
+          "issues_count": 1,
+          "issues_by_symbol": {
+            "syntax-error": 1
+          },
+          "error": null
+        }
+      },
+      "after": {
+        "path": "/Users/hongchongyuan/Desktop/DSAN_spring_2026/dsan6750/spring-2026-final-project-team_026/test_set/result/rpython.py",
+        "syntax_ok": true,
+        "syntax_error": null,
+        "lint": {
+          "ok": true,
+          "issues_count": 2,
+          "issues_by_symbol": {
+            "missing-final-newline": 1,
+            "missing-module-docstring": 1
+          },
+          "error": null
+        }
+      },
+      "improvement": {
+        "lint_issue_reduction": -1
+      }
+    },
+    {
+      "file": "rpythond.py",
+      "status": "checked",
+      "before": {
+        "path": "/Users/hongchongyuan/Desktop/DSAN_spring_2026/dsan6750/spring-2026-final-project-team_026/test_set/x/rpythond.py",
+        "syntax_ok": false,
+        "syntax_error": "  File \"/Users/hongchongyuan/Desktop/DSAN_spring_2026/dsan6750/spring-2026-final-project-team_026/test_set/x/rpythond.py\", line 26\n    \t\tprint 'connected by', remotehost, remoteport\n    \t\t^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nSyntaxError: Missing parentheses in call to 'print'. Did you mean print(...)?\n",
+        "lint": {
+          "ok": true,
+          "issues_count": 1,
+          "issues_by_symbol": {
+            "syntax-error": 1
+          },
+          "error": null
+        }
+      },
+      "after": {
+        "path": "/Users/hongchongyuan/Desktop/DSAN_spring_2026/dsan6750/spring-2026-final-project-team_026/test_set/result/rpythond.py",
+        "syntax_ok": true,
+        "syntax_error": null,
+        "lint": {
+          "ok": true,
+          "issues_count": 8,
+          "issues_by_symbol": {
+            "missing-function-docstring": 2,
+            "broad-exception-caught": 1,
+            "exec-used": 1,
+            "missing-final-newline": 1,
+            "missing-module-docstring": 1,
+            "unused-import": 1,
+            "unused-variable": 1
+          },
+          "error": null
+        }
+      },
+      "improvement": {
+        "lint_issue_reduction": -7
+      }
+    },
+    {
+      "file": "sortvisu.py",
+      "status": "checked",
+      "before": {
+        "path": "/Users/hongchongyuan/Desktop/DSAN_spring_2026/dsan6750/spring-2026-final-project-team_026/test_set/x/sortvisu.py",
+        "syntax_ok": false,
+        "syntax_error": "Sorry: TabError: inconsistent use of tabs and spaces in indentation (sortvisu.py, line 35)",
+        "lint": {
+          "ok": true,
+          "issues_count": 1,
+          "issues_by_symbol": {
+            "syntax-error": 1
+          },
+          "error": null
+        }
+      },
+      "after": {
+        "path": "/Users/hongchongyuan/Desktop/DSAN_spring_2026/dsan6750/spring-2026-final-project-team_026/test_set/result/sortvisu.py",
+        "syntax_ok": true,
+        "syntax_error": null,
+        "lint": {
+          "ok": true,
+          "issues_count": 82,
+          "issues_by_symbol": {
+            "missing-function-docstring": 29,
+            "unused-variable": 16,
+            "attribute-defined-outside-init": 10,
+            "no-member": 7,
+            "undefined-variable": 4,
+            "multiple-statements": 3,
+            "consider-using-f-string": 2,
+            "missing-class-docstring": 2,
+            "too-many-instance-attributes": 2,
+            "unused-import": 2,
+            "consider-using-max-builtin": 1,
+            "missing-final-newline": 1,
+            "raising-bad-type": 1,
+            "redefined-builtin": 1,
+            "too-many-public-methods": 1
+          },
+          "error": null
+        }
+      },
+      "improvement": {
+        "lint_issue_reduction": -81
+      }
+    }
+  ],
+  "summary": {
+    "files_checked": 20,
+    "syntax_pass": 4,
+    "syntax_pass_rate": 0.2,
+    "lint_tool": "pylint",
+    "total_improvement": 18
+  }
+}

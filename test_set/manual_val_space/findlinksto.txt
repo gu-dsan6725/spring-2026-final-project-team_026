@@ -1,0 +1,4 @@
+  File "/Users/hongchongyuan/Desktop/DSAN_spring_2026/dsan6750/spring-2026-final-project-team_026/test_set/result/findlinksto.py", line 16
+    raise getopt.error, 'not enough arguments'
+                      ^
+SyntaxError: invalid syntax
